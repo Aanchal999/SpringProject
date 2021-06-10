@@ -1,0 +1,185 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<div class="container-fluid jumbotron" >
+        <div class="mat-card">
+            <div class="card-header">
+              <h2>Sign-Up</h2>
+            </div>
+            <div class="card-body">
+               
+                    <form class="text-center border border-light p-5">
+                        <tr>
+                            <td >
+                                <div class="form-group" ><!--form group is used for proper grouping -->
+                                    <label for="firstname">First Name</label>
+                                    <input [(ngModel)]="signup.fname"  name="fname" type="text"  class="form-control" placeholder="Firstname" #fname="ngModel" required  minlength="4">
+                                    <div *ngIf="fname.invalid && (fname.dirty || fname.touched)">                               
+                                        <mat-error *ngIf="fname.hasError('required')">
+                                         First Name is required.
+                                        </mat-error>
+                                        <mat-error *ngIf="fname.hasError('minlength')">
+                                            Minimum Length is 4 characters.
+                                        </mat-error>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group" >
+                                    <label for="lastname">Last Name</label>
+                                    <input [(ngModel)]="signup.lname" name="lname" type="text" class="form-control" placeholder="Lastname"  required minlength="4" #lname="ngModel">
+                                    <div *ngIf="lname.invalid && (lname.dirty || lname.touched)">                               
+                                        <mat-error *ngIf="lname.hasError('required')">
+                                         Last Name is required.
+                                        </mat-error>
+                                        <mat-error *ngIf="lname.hasError('minlength')">
+                                            Minimum Length is 4 characters.
+                                        </mat-error>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td>
+                            <div class="form-group" >
+                            <label for="email">E-mail</label>
+                            <input  [(ngModel)]="signup.mail" type="email" name="mail" class="form-control" [pattern]="emailPattern" placeholder="E-mail" ngModel required email #mail="ngModel"> 
+                            <div *ngIf="mail.invalid && (mail.dirty || mail.touched)">                               
+                                        <mat-error *ngIf="mail.hasError('required')">
+                                         E-mail is required.
+                                        </mat-error>
+                                        <mat-error *ngIf="mail.hasError('pattern')"> 
+                                             Email not valid.
+                                        </mat-error>	
+                                    </div>
+                                    </div>
+                                </td>
+                        
+                        <td >
+                            <div class="form-group" >
+                            <label for="contact">Contact No.</label>
+                            <input [(ngModel)]="signup.pnumber" type="tel" class="form-control" name="pnumber" placeholder="Contact no." ngModel required minlength="10" maxlength="10" #pnumber="ngModel">    
+                            <div *ngIf="pnumber.invalid && (pnumber.dirty || pnumber.touched)">                               
+                                        <mat-error *ngIf="pnumber.hasError('required')">
+                                         Contact No. is required.
+                                        </mat-error>
+                                        <mat-error *ngIf="pnumber.hasError('minlength')">
+                                            Enter valid No. of length 10.
+                                        </mat-error>
+                                        <mat-error *ngIf="pnumber.hasError('maxlength')">
+                                            Enter valid No. of length 10.
+                                        </mat-error>
+                                    </div>
+                                    </div>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td >
+                                <div class="form-group"><!--form group is used for proper grouping -->
+                                    <label for="address">Address 1(Flat No.)</label>
+                                    <input  [(ngModel)]="signup.a1" name="a1" type="text"  class="form-control" placeholder="Address" ngModel required #a1="ngModel">
+                                    <div *ngIf="a1.invalid && (a1.dirty || a1.touched)">                               
+                                        <mat-error *ngIf="a1.hasError('required')">
+                                         Address is required.
+                                        </mat-error>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group" >
+                                    <label for="address2">Address 2(Area)</label>
+                                    <input [(ngModel)]="signup.a2" name="a2" type="text" class="form-control" placeholder="Address" ngModel required #a2="ngModel">
+                                    <div *ngIf="a2.invalid && (a2.dirty || a2.touched)">                               
+                                    <mat-error *ngIf="a2.hasError('required')">
+                                     address is required.
+                                    </mat-error>
+                                   
+                                </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="form-group" >
+                                    <label for="Country">Country</label>
+                                    <input [(ngModel)]="signup.country" name="country" type="text" class="form-control"  placeholder="Country" ngModel required #country="ngModel">
+                                    <div *ngIf="country.invalid && (country.dirty || country.touched)">                               
+                                        <mat-error *ngIf="country.hasError('required')">
+                                         Country is required.
+                                        </mat-error>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="form-group"  >
+                                    <label for="State">State</label>
+                                    <select [(ngModel)]="signup.state"  name="state" class="form-control" #state="ngModel" (change)="changeCountry($event)" required>
+                                        
+                                        <option *ngFor ="let count of stateList" >{{count.name}}</option>
+                                    </select>
+                                    <mat-error  *ngIf="state.errors  && (state.dirty || state.touched)">              
+                                         Please select your state
+                                    </mat-error>
+                                </div>        
+                            </td>
+                        </tr>
+                        <tr>
+                            <div class="col">
+                                <div class="form-group" >
+                                    <label for="City">City</label>
+                                    <select [(ngModel)]="signup.city" name="city" class="form-control" #city="ngModel" >
+                                        <option *ngFor ="let city of cities">{{city}}</option>
+                                      </select>
+                                      <mat-error *ngIf="city.errors  && (city.dirty || city.touched)">              
+                                        Please select your city
+                                      </mat-error>
+                                </div>
+                            </div>                    
+                        </tr>
+                        <tr>
+                            <td>
+                                
+                                    <label for="password">Password</label>
+                                    <input [(ngModel)]="signup.password" name="Password" type="password" class="form-control" placeholder="Password" ngModel required minlength="6" #password="ngModel">
+                                    <div *ngIf="password.invalid && (password.dirty || password.touched)">                               
+                                        <mat-error *ngIf="password.hasError('required')">
+                                         Please Set Password is required.
+                                        </mat-error>
+                                        <mat-error *ngIf="password.hasError('minlength')">
+                                            Minimum length is 6 characters.
+                                        </mat-error>
+                                    </div>
+                                
+                                </td>
+                            <td>
+                                
+                                    <label for="confirmpassword"> Confirm Password</label>
+                                    <input [(ngModel)]="signup.confirmpassword" name="confirmpassword" type="password" class="form-control" placeholder="Confirm Password" ngModel required   #confirmpassword="ngModel">
+                                    <mat-error *ngIf="signup.password!=signup.confirmpassword && confirmpassword.touched" >              
+                                        Password not matching
+                                      </mat-error>
+                             
+                            </td>                    
+                        </tr>
+
+
+                        <div class="row">
+                            <button   type="submit" class="btn btn-lg submit"  md-raised-button [disabled]="signup.invalid" >Submit</button>
+                           <button  type="reset" class="btn btn-lg clear"  md-raised-button >Clear</button>
+                      </div>
+                      <div >
+                         <p >Already a member?</p>
+                         <a  href="/userlogin" class="cent">Login</a>
+                     </div>
+
+                             
+                    </form>
+                </div>
+            </div>
+        
+  </div>

@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<mat-sidenav-container >
+    <mat-toolbar >
+      <div class="form-inline " >
+        <ul class="navbar-nav">
+          <li>
+      <button mat-icon-button class="example-icon" (click)="sidenav.open()" >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a>My App</a>
+    </li>
+
+          <li class="nav-item active">
+            <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
+          </li>
+    
+          <!-- Dropdown -->
+          <li class="dropdown">
+            <a  class="dropbtn">Dropdown</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>
+          </li>
+    
+        </ul>
+
+      </div>
+
+
+      <span class="example-spacer"></span>
+      
+      <form class="form-inline">
+        <div >
+          <a  class="btn btn-lg button" type="submit">LogOut</a>
+        </div>
+      </form>
+
+    </mat-toolbar>
+
+</mat-sidenav-container>
+
+<mat-sidenav class="sidebar" #sidenav (keydown.escape)="close()" disableClose>
+ 
+  <a (click)="close()"><i class="fa fa-2x fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+
+  <div class="sidebar-collapse">
+    <ul>
+      <li>
+        <a href="/dashboard"><i class="fa fa-dashboard" ></i> Dashboard</a>
+      </li>
+     
+      <li>
+        <a href="/charts"><i class="fa fa-bar-chart"></i> Charts</a>
+      </li>
+      <li>
+        <a  href="/panels"><i class="fa  fa-tasks"></i> Profiles</a>
+      </li>
+      <li>
+        <a href="/responsivetables"><i class="fa  fa-table" ></i> Responsive Tables</a>
+      </li>
+      <li>
+        <a href="/forms"><i class="fa  fa-pencil-square-o" ></i> Forms</a>
+      </li>
+      <li>
+        <a href="/emptypage"><i class="fa fa-file" ></i> Empty Page</a>
+      </li>
+    </ul>
+
+  </div>
+</mat-sidenav>
+
+
+
+
+

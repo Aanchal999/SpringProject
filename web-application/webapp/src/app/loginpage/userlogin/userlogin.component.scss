@@ -1,0 +1,26 @@
+.mat-card{
+    border-radius: 3%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 20px 20px 20px 20px;
+    margin-top: 5%;
+    background-color: white;
+ }
+ .mat-card:hover {
+    box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
+  }
+  
+  .jumbotron{
+     background-color:#f2f7f8!important;
+     height: 625px ;
+     margin-bottom: 0;
+     
+  }
+  button{
+    color: white;
+    background-color: #55ce63 ;
+}
+
+h1 .sign{
+    font-family:  "Times New Roman";
+    color: #55ce63!important; ;
+}
