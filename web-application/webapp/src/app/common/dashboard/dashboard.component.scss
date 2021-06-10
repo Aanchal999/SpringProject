@@ -1,5 +1,39 @@
-#background{
-    background:url(https://image.shutterstock.com/z/stock-vector-romantic-music-background-for-paper-and-web-design-479639764.jpg) no-repeat center center fixed;
-    background-size: cover;
-    height: 500px;
-}
+#employees {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #employees td, #employees th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #employees tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #employees tr:hover {background-color: #ddd;}
+  
+  #employees th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgb(92, 76, 76);
+    color: #fff;
+  }
+
+  .mat-card{
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin-top: 5%;
+    
+ }
+ .mat-card:hover {
+    box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
+  }
+  
+  .jumbotron{
+     background-color:#f2f7f8!important;
+     
+     margin-bottom: 0;
+     
+  }

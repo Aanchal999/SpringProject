@@ -1,0 +1,64 @@
+ {
+        "tracks": [
+            {
+                "id": 1,
+                "name": "song A",
+                "dateOfRelease": "12/02/2021",
+                "albumId": null
+            },
+            {
+                "id": 2,
+                "name": "song B",
+                "dateOfRelease": "12/02/2021",
+                "albumId": null
+            },
+            {
+                "id": 3,
+                "name": "song C",
+                "dateOfRelease": "12/02/2021",
+                "albumId": null
+            },
+            {
+                "id": 4,
+                "name": "song D",
+                "dateOfRelease": "12/02/2021",
+                "albumId": null
+            },
+            {
+                "id": 5,
+                "name": "song E",
+                "dateOfRelease": "12/02/2021",
+                "albumId": null
+            },
+            {
+                "id": 6,
+                "name": "song F",
+                "dateOfRelease": "12/02/2021",
+                "albumId": null
+            },
+            {
+                "id": 7,
+                "name": "song G",
+                "dateOfRelease": "12/02/2021",
+                "albumId": null
+            },
+            {
+                "id": 8,
+                "name": "song H",
+                "dateOfRelease": "12/02/2021",
+                "albumId": null
+            },
+            {
+                "id": 9,
+                "name": "song I",
+                "dateOfRelease": "12/02/2021",
+                "albumId": null
+            },
+            {
+                "id": 10,
+                "name": "song J",
+                "dateOfRelease": "12/02/2021",
+                "albumId": null
+            }
+        ]
+    }

@@ -48,6 +48,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
+import { SingersComponent } from './sidebar/singers/singers.component';
 
 
 @NgModule({
@@ -59,6 +60,7 @@ import { DashboardComponent } from './common/dashboard/dashboard.component';
     HeaderComponent,
     FooterComponent,
     DashboardComponent,
+    SingersComponent,
 
 
   ],
