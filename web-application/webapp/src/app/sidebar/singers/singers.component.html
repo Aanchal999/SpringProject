@@ -8,13 +8,34 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <div class="container-fluid jumbotron" >
+
+    <div class="row" id="up">
+        <div class="col-lg-3 col-md-3">
+          <mat-form-field>
+            <input matInput (keyup)="applyFilter($event)" placeholder="search"> 
+          </mat-form-field>
+          <button mat-icon-button matTooltip="Click to search" class="iconbutton"
+            color="primary" >
+            <mat-icon>search</mat-icon>
+          </button>
+        </div>
+        <div class="col-lg-8 col-md-8" >
+        </div>
+        <div class="col-lg-1 col-md-1" >
+          <button id="button" class="btn btn-lg" type="submit">Add Singer</button>
+        </div>
+      </div>
     
+
 
         <div class="col-lg-3 col-md-3 " *ngFor="let singer of SingerList.singers">
             <mat-card id="top" class="text-center" > 
                 <div id="image"  ><img mat-card-image src="assets\singer.png"
                  alt="Photo of a Aanchal">
                  <mat-card-content class="text-center">
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                     <div class="col-lg-6">
                     <tr >
                         <td>{{singer.name}}</td>
                     </tr>
@@ -24,6 +45,20 @@
                     <tr >
                         <td>{{singer.nationality}}</td>
                     </tr>
+                    </div>
+                    <div class="col-lg-4">
+                    
+                        <td> <button mat-icon-button matTooltip="Click to Edit" class="iconbutton"
+                            color="primary" >
+                            <mat-icon>edit</mat-icon>
+                          </button></td>
+                          <td> <button mat-icon-button matTooltip="Click to Delete" class="iconbutton"
+                            color="warn" (click)="openModal()">
+                            <mat-icon>delete</mat-icon>
+                          </button></td>
+                          </div>
+                    </div>
+
                  </mat-card-content>
                 </div>
             </mat-card>

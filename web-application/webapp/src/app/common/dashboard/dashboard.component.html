@@ -9,22 +9,51 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <div class="container-fluid jumbotron">
+<div class="row" id="top">
+  <div class="col-lg-3 col-md-3">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event)" placeholder="search"> 
+    </mat-form-field>
+    <button mat-icon-button matTooltip="Click to search" class="iconbutton"
+      color="primary" >
+      <mat-icon>search</mat-icon>
+    </button>
+  </div>
+  <div class="col-lg-8 col-md-8" >
+  </div>
+  <div class="col-lg-1 col-md-1" >
+    <button id="button" class="btn btn-lg" type="submit">Add Track</button>
+  </div>
+</div>
+
+
   <div class="mat-card">
-  <table id="employees">
+  <table id="employees" class="text-center">
     <tr>
       <th>ID</th>
       <th>Name</th>
       <th>Date of release</th>
       <th>AlbumId</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
     <tr *ngFor="let employee of TrackList.tracks">
       <td>{{employee.id}}</td>
       <td>{{employee.name}}</td>
       <td>{{employee.dateOfRelease}}</td>
       <td>{{employee.albumId}}</td>
+      <td> <button mat-icon-button matTooltip="Click to Edit" class="iconbutton"
+        color="primary" >
+        <mat-icon>edit</mat-icon>
+      </button></td>
+      <td> <button mat-icon-button matTooltip="Click to Delete" class="iconbutton"
+        color="warn" (click)="openModal()">
+        <mat-icon>delete</mat-icon>
+      </button></td>
+     
     </tr>
   </table>
-
+   <!--<mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 50, 100]" showFirstLastButtons></mat-paginator>-->
 
   </div>
       

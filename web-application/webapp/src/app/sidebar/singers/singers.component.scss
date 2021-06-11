@@ -2,7 +2,7 @@
     border-radius: 3%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     background-color: white;
-    margin-left: 7%;
+    padding-top: 30px;
     height: 250px;
  }
  .mat-card:hover {
@@ -15,6 +15,22 @@
      margin-bottom: 0;
      
   }
+  mat-form-field{
+    margin-left: 5%;
+  }
+  #button{
+    color: white;
+    background-color: #55ce63 ;
+    float: right;
+    margin-right: 10%;
+}
+mat-icon{
+  font-size: 35px;
+}
+
+  #up{
+    margin-top: 5%;
+  } 
 
   #top{
     margin-top: 20%;
@@ -23,7 +39,4 @@
       height: 150px;
       width: 150px;
       align-self: center;
-  }
-  mat-card-content{
-      padding-left: 35%;
   }

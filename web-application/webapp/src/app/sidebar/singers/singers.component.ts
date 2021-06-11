@@ -14,6 +14,9 @@ export class SingersComponent implements OnInit {
     this.SingerList = singers
    }
 
+   applyFilter(filterValue: Event) {
+    this.SingerList.singers.filter=((<HTMLInputElement>filterValue.target).value).toLowerCase().trim();
+  }
 
 
   ngOnInit(): void {

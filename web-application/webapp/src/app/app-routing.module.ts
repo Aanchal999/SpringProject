@@ -9,6 +9,7 @@ import { SingersComponent } from './sidebar/singers/singers.component';
 const routes: Routes = [
   {path: 'userregister', component:UserregisterComponent},
   {path: 'dashboard', component:DashboardComponent},
+  {path: 'songs', component:DashboardComponent},
   {path: 'singers', component:SingersComponent},
   {path: '**', component:UserloginComponent},
 ];
