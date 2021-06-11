@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import singers from '/src/app/files/singers.json'
 
 @Component({
   selector: 'app-singers',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SingersComponent implements OnInit {
 
-  constructor() { }
+  SingerList:any;
+
+  constructor() {
+    this.SingerList = singers
+   }
+
+
 
   ngOnInit(): void {
   }
