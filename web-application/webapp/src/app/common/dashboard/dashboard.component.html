@@ -22,7 +22,7 @@
   <div class="col-lg-8 col-md-8" >
   </div>
   <div class="col-lg-1 col-md-1" >
-    <button id="button" class="btn btn-lg" type="submit">Add Track</button>
+    <button id="button" class="btn btn-lg" (click)="onCreate()" type="submit">Add Track</button>
   </div>
 </div>
 
@@ -42,12 +42,12 @@
       <td>{{employee.name}}</td>
       <td>{{employee.dateOfRelease}}</td>
       <td>{{employee.albumId}}</td>
-      <td> <button mat-icon-button matTooltip="Click to Edit" class="iconbutton"
+      <td> <button mat-icon-button matTooltip="Click to Edit" (click)="onCreate()" class="iconbutton"
         color="primary" >
         <mat-icon>edit</mat-icon>
       </button></td>
       <td> <button mat-icon-button matTooltip="Click to Delete" class="iconbutton"
-        color="warn" (click)="openModal()">
+        color="warn" >
         <mat-icon>delete</mat-icon>
       </button></td>
      

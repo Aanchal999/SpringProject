@@ -1,7 +1,10 @@
-import { AfterViewInit, Component, ViewChild,  OnInit } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, TemplateRef, OnInit,ViewContainerRef, Inject } from '@angular/core';
 import tracks from '/src/app/files/tracks.json'
 import { MatPaginator } from '@angular/material/paginator';
 import singers from '/src/app/files/singers.json'
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { SaveformComponent } from '../saveform/saveform.component';
+
 
 @Component({
   selector: 'app-dashboard',
@@ -10,9 +13,10 @@ import singers from '/src/app/files/singers.json'
 })
 export class DashboardComponent implements AfterViewInit {
 
+
 TrackList:any;
 SingerList:any;
-  constructor() {
+  constructor(private dialog:MatDialog) {
     this.TrackList = tracks
     this.SingerList = singers
    }
@@ -24,6 +28,10 @@ SingerList:any;
      this.TrackList.tracks.paginator=this.paginator;
    }
  
+onCreate(){
+  this.dialog.open(SaveformComponent);
+}
+
 
 
   applyFilter(filterValue: Event) {

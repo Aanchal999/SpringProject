@@ -9,6 +9,7 @@ import { UserloginComponent } from './loginpage/userlogin/userlogin.component';
 import { UserregisterComponent } from './loginpage/userregister/userregister.component';
 import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
+import { SaveformComponent } from './common/saveform/saveform.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {MatListModule} from '@angular/material/list';
@@ -49,6 +50,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatTreeModule} from '@angular/material/tree';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { SingersComponent } from './sidebar/singers/singers.component';
+import { AddsingerComponent } from './common/saveform/addsinger/addsinger.component';
 
 
 @NgModule({
@@ -61,6 +63,8 @@ import { SingersComponent } from './sidebar/singers/singers.component';
     FooterComponent,
     DashboardComponent,
     SingersComponent,
+    SaveformComponent,
+    AddsingerComponent
 
 
   ],
@@ -117,6 +121,7 @@ import { SingersComponent } from './sidebar/singers/singers.component';
 
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [SaveformComponent]
 })
 export class AppModule { }

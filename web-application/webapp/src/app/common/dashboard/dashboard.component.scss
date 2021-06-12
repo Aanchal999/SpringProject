@@ -17,7 +17,7 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: rgb(92, 76, 76);
+    background-color: rgb(255, 68, 140);
     color: #fff;
   }
 
@@ -25,13 +25,14 @@
 
   .mat-card{    
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); 
+    
  }
  .mat-card:hover {
     box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
   }
   
   .jumbotron{
-     background-color:#f2f7f8!important;
+     background-color:rgba(42, 42, 42, 1)!important;
      margin-bottom: 0; 
   }
 

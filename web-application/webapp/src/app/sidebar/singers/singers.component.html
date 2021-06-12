@@ -12,17 +12,17 @@
     <div class="row" id="up">
         <div class="col-lg-3 col-md-3">
           <mat-form-field>
-            <input matInput (keyup)="applyFilter($event)" placeholder="search"> 
+            <input matInput (keyup)="applyFilter($event)" placeholder="search" color="warn">   
           </mat-form-field>
           <button mat-icon-button matTooltip="Click to search" class="iconbutton"
-            color="primary" >
+            color="accent" >
             <mat-icon>search</mat-icon>
           </button>
         </div>
         <div class="col-lg-8 col-md-8" >
         </div>
         <div class="col-lg-1 col-md-1" >
-          <button id="button" class="btn btn-lg" type="submit">Add Singer</button>
+          <button id="button" class="btn btn-lg"  (click)="onCreate()" type="submit">Add Singer</button>
         </div>
       </div>
     

@@ -6,7 +6,7 @@
   margin-left: 0;
 }
   mat-toolbar{
-    background-color: #009efb!important;
+    background-color: #7123e2!important;
     color: white;
     position:fixed;
   }
@@ -16,7 +16,7 @@
     height: 100%;
     align-items: center;
     justify-content: center;
-    background-color: #ff7070;
+    background-color: rgb(255, 68, 140);
   }
 
 a{
@@ -43,12 +43,13 @@ li{
   padding-right: 10px;
 }
 a:hover {
-  color:whitesmoke;
+  color:rgb(185, 174, 174);
+
 }
 
 .button{
   color:white;
-  background-color: rgb(133, 126, 126);
+  background-color: rgba(33,42,47,.85);
 }
 
 
@@ -63,7 +64,8 @@ li a, .dropbtn {
 }
 
 li a:hover, .dropdown:hover .dropbtn .login {
-  background-color: rgb(176, 188, 255);
+  background-color: rgb(72, 72, 75);
+
 }
 
 li.dropdown {

@@ -119,7 +119,7 @@
                                 <div class="form-group"  >
                                     <label for="State">State</label>
                                     <select [(ngModel)]="signup.state"  name="state" class="form-control" #state="ngModel" (change)="changeCountry($event)" required>
-                                        
+                                        <option selected>Select Country</option>
                                         <option *ngFor ="let count of stateList" >{{count.name}}</option>
                                     </select>
                                     <mat-error  *ngIf="state.errors  && (state.dirty || state.touched)">              
@@ -133,6 +133,7 @@
                                 <div class="form-group" >
                                     <label for="City">City</label>
                                     <select [(ngModel)]="signup.city" name="city" class="form-control" #city="ngModel" >
+                                        <option selected>Select City</option>
                                         <option *ngFor ="let city of cities">{{city}}</option>
                                       </select>
                                       <mat-error *ngIf="city.errors  && (city.dirty || city.touched)">              
