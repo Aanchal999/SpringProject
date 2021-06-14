@@ -12,7 +12,7 @@
     <div class="row" id="up">
         <div class="col-lg-3 col-md-3">
           <mat-form-field>
-            <input matInput (keyup)="applyFilter($event)" placeholder="search" color="warn">   
+            <input matInput (keyup)="applyFilter($event)" placeholder="search" color="accent">   
           </mat-form-field>
           <button mat-icon-button matTooltip="Click to search" class="iconbutton"
             color="accent" >
@@ -30,6 +30,9 @@
 
         <div class="col-lg-3 col-md-3 " *ngFor="let singer of SingerList.singers">
             <mat-card id="top" class="text-center" > 
+
+              <a href="/playlists"><i class="fa fa-heart-o fa-2x"  id="like" ></i></a>
+              
                 <div id="image"  ><img mat-card-image src="assets\singer.png"
                  alt="Photo of a Aanchal">
                  <mat-card-content class="text-center">
@@ -49,7 +52,7 @@
                     <div class="col-lg-4">
                     
                         <td> <button mat-icon-button matTooltip="Click to Edit" class="iconbutton"
-                            color="primary" >
+                            color="primary" (click)="onCreate()" >
                             <mat-icon>edit</mat-icon>
                           </button></td>
                           <td> <button mat-icon-button matTooltip="Click to Delete" class="iconbutton"

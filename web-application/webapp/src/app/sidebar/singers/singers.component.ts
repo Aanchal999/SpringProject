@@ -17,7 +17,7 @@ export class SingersComponent implements OnInit {
    }
 
    applyFilter(filterValue: Event) {
-    this.SingerList.singers.filter=((<HTMLInputElement>filterValue.target).value).toLowerCase().trim();
+    this.SingerList.filter=((<HTMLInputElement>filterValue.target).value).toLowerCase().trim();
   }
 
    

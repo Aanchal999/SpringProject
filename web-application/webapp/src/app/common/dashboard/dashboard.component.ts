@@ -25,17 +25,20 @@ SingerList:any;
 
    ngAfterViewInit() {
      
-     this.TrackList.tracks.paginator=this.paginator;
+     this.TrackList.paginator=this.paginator;
    }
  
 onCreate(){
-  this.dialog.open(SaveformComponent);
+  const dialogconfig = new MatDialogConfig();
+  dialogconfig.disableClose = false;
+  dialogconfig.autoFocus = true;
+  this.dialog.open(SaveformComponent,dialogconfig);
 }
 
 
 
   applyFilter(filterValue: Event) {
-    this.TrackList.tracks.filter=((<HTMLInputElement>filterValue.target).value).toLowerCase().trim();
+    this.TrackList.filter=((<HTMLInputElement>filterValue.target).value).toLowerCase().trim();
   }
 
 }

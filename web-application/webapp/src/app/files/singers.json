@@ -2,7 +2,7 @@
     "singers": [
         {
             "id": 1,
-            "name": "song A",
+            "name": "Singer A",
             "gender": "Male",
             "nationality": "India"
         },
