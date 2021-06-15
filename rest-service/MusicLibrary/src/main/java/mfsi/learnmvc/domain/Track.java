@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 
+import mfsi.learnmvc.dto.TrackDto;
+
 @Entity
 public class Track extends BaseEntity {
 
@@ -39,6 +41,14 @@ public class Track extends BaseEntity {
 		super();
 	}
 
+	public Track(TrackDto dto) {
+		id = dto.getId();
+		name = dto.getName();
+		mediaType = dto.getMediaType();
+		mediaFormat = dto.getMediaFormat();
+		dateOfRelease = dto.getDateOfRelease();
+	}
+	
 	public Integer getId() {
 		return id;
 	}
