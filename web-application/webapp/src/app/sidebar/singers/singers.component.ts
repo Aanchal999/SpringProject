@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import singers from '/src/app/files/singers.json';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddsingerComponent } from 'src/app/common/saveform/addsinger/addsinger.component';
@@ -16,6 +16,21 @@ export class SingersComponent implements OnInit {
     this.SingerList = singers
    }
 
+
+
+   @Input() selected: boolean;
+   @Output() selectedChange = new EventEmitter<boolean>();
+ 
+
+ 
+   ngOnInit() {
+   }
+ 
+   public toggleSelected() {
+     this.selected = !this.selected;
+     this.selectedChange.emit(this.selected);
+   }
+
    applyFilter(filterValue: Event) {
     this.SingerList.filter=((<HTMLInputElement>filterValue.target).value).toLowerCase().trim();
   }
@@ -30,7 +45,5 @@ onCreate(){
 
 
 
-  ngOnInit(): void {
-  }
 
 }

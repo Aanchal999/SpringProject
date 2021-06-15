@@ -1,14 +1,14 @@
 
 #back{
-  background: url(https://images.unsplash.com/photo-1500462918059-b1a0cb512f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NTh8fG11c2ljJTIwd2FsbHBhcGVyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60) no-repeat center center ;
+  background: url(https://i.pinimg.com/originals/cc/d2/96/ccd2965fda1b5090f7500d7753040296.jpg) no-repeat center center ;
   background-size: cover;
 }
 .mat-card{
-   float: left;
     border-radius: 3%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     padding: 20px 20px 20px 20px;
     margin-top: 5%;
+      margin-left: -20%;
     background-color: whitesmoke;
  }
  .mat-card:hover {
@@ -28,6 +28,6 @@
 
 h1 .sign{
     font-family:  "Times New Roman";
-    color: #55ce63!important; ;
+    color: #55ce63!important; 
 }
 

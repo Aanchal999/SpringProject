@@ -39,10 +39,7 @@
     </tr>
     <tr *ngFor="let employee of TrackList.tracks">
       <td>{{employee.id}}</td>
-      <td><button mat-icon-button matTooltip="Click to Play"  class="iconbutton"
-        color="primary" >
-        <mat-icon class="play_circle_filled"></mat-icon>
-      </button>{{employee.name}}</td>
+      <td> {{employee.name}}</td>
       <td>{{employee.dateOfRelease}}</td>
       <td>{{employee.albumid}}</td>
       <td> <button mat-icon-button matTooltip="Click to Edit" (click)="onCreate()" class="iconbutton"

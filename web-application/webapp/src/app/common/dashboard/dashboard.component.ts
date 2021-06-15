@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild, TemplateRef, OnInit,ViewContainerRef, Inject } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, TemplateRef, OnInit,ViewContainerRef, Inject, EventEmitter, Output, Input } from '@angular/core';
 import tracks from '/src/app/files/tracks.json'
 import { MatPaginator } from '@angular/material/paginator';
 import singers from '/src/app/files/singers.json'
@@ -22,6 +22,20 @@ SingerList:any;
    }
 
    @ViewChild(MatPaginator) paginator:MatPaginator;
+
+
+   @Input() selected: boolean;
+   @Output() selectedChange = new EventEmitter<boolean>();
+ 
+
+ 
+ 
+ 
+   public toggleSelected() {
+     this.selected = !this.selected;
+     this.selectedChange.emit(this.selected);
+   }
+
 
    ngAfterViewInit() {
      
