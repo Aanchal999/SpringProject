@@ -2,14 +2,13 @@ package mfsi.learnmvc.domain;
 
 import java.util.Date;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class BaseEntity {
-	
-	@Id
-	private Integer id;
 	
 	private String name;
 
@@ -25,13 +24,6 @@ public class BaseEntity {
 		super();
 	}
 
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getName() {
 		return name;
@@ -75,7 +67,7 @@ public class BaseEntity {
 
 	@Override
 	public String toString() {
-		return "BaseEntity [id=" + id + ", name=" + name + ", createdOn=" + createdOn + ", updatedOn=" + updatedOn
+		return "BaseEntity [name=" + name + ", createdOn=" + createdOn + ", updatedOn=" + updatedOn
 				+ ", createdBy=" + createdBy + ", updatedBy=" + updatedBy + "]";
 	}
 	

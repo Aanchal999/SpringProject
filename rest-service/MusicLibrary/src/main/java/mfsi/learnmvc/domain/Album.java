@@ -3,16 +3,17 @@ package mfsi.learnmvc.domain;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 @Entity
 public class Album extends BaseEntity {
-	
+
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
-	private String name;
 
 	@OneToMany(mappedBy = "album")
 	private Set<Track> track;
@@ -29,14 +30,6 @@ public class Album extends BaseEntity {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public Set<Track> getTrack() {
 		return track;
 	}
@@ -47,10 +40,7 @@ public class Album extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "Album [id=" + id + ", name=" + name + ", track=" + track + "]";
+		return "Album [id=" + id + ", track=" + track + "]";
 	}
-	
-	
-
 
 }

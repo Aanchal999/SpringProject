@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -15,12 +17,11 @@ import mfsi.learnmvc.dto.TrackDto;
 public class Track extends BaseEntity {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	private String name;
-	
 	private String mediaType;
-	
+
 	private String mediaFormat;
 
 	private Date dateOfRelease;
@@ -41,14 +42,6 @@ public class Track extends BaseEntity {
 		super();
 	}
 
-	public Track(TrackDto dto) {
-		id = dto.getId();
-		name = dto.getName();
-		mediaType = dto.getMediaType();
-		mediaFormat = dto.getMediaFormat();
-		dateOfRelease = dto.getDateOfRelease();
-	}
-	
 	public Integer getId() {
 		return id;
 	}
@@ -57,12 +50,10 @@ public class Track extends BaseEntity {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
+	public Track(TrackDto dto) {
+		mediaType = dto.getMediaType();
+		mediaFormat = dto.getMediaFormat();
+		dateOfRelease = dto.getDateOfRelease();
 	}
 
 	public Date getDateOfRelease() {
@@ -123,8 +114,9 @@ public class Track extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "Track [id=" + id + ", name=" + name + ", dateOfRelease=" + dateOfRelease + ", path=" + path + ", album="
-				+ album + "]";
+		return "Track [id=" + id + ", mediaType=" + mediaType + ", mediaFormat=" + mediaFormat + ", dateOfRelease="
+				+ dateOfRelease + ", path=" + path + ", album=" + album + ", playlists=" + playlists + ", singers="
+				+ singers + "]";
 	}
 
 }

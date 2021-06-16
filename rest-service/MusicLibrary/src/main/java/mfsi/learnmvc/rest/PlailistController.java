@@ -9,15 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import mfsi.learnmvc.dto.SingerDto;
-import mfsi.learnmvc.service.SingerService;
+import mfsi.learnmvc.dto.PlaylistDto;
+import mfsi.learnmvc.service.PlaylistService;
 
 @RestController
-@RequestMapping("/singer")
-public class SingerController {
+
+@RequestMapping("/playlist")
+public class PlailistController {
 	
 	@Autowired
-	private SingerService service;
+	private PlaylistService service;
 	
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public ResponseEntity<?> getAll() {
@@ -26,7 +27,7 @@ public class SingerController {
 	}
 
 	@RequestMapping(value = "/save", method = RequestMethod.POST)
-	public ResponseEntity<?> save(@RequestBody SingerDto dto) {
+	public ResponseEntity<?> save(@RequestBody PlaylistDto dto) {
 		ResponseEntity<?> response = new ResponseEntity<>(service.save(dto), HttpStatus.OK);
 		return response;
 	}
@@ -36,5 +37,5 @@ public class SingerController {
 		service.delete(id);
 	}
 
-
+	
 }

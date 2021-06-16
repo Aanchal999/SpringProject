@@ -3,6 +3,8 @@ package mfsi.learnmvc.domain;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
@@ -10,9 +12,8 @@ import javax.persistence.ManyToMany;
 public class Role extends BaseEntity {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-
-	private String name;
 
 	@ManyToMany(mappedBy = "roles")
 	private Set<User> users;
@@ -29,14 +30,6 @@ public class Role extends BaseEntity {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public Set<User> getUsers() {
 		return users;
 	}
@@ -47,7 +40,7 @@ public class Role extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "Role [id=" + id + ", name=" + name + "]";
+		return "Role [id=" + id + ", users=" + users + "]";
 	}
 
 }

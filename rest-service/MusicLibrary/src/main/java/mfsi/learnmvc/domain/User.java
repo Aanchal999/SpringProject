@@ -3,6 +3,8 @@ package mfsi.learnmvc.domain;
 import java.util.Set;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -13,11 +15,10 @@ import javax.persistence.OneToMany;
 public class User extends BaseEntity {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
-	private String name;
-
-	private String eMail;
+	private String email;
 
 	private String phoneNo;
 
@@ -44,20 +45,12 @@ public class User extends BaseEntity {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String geteMail() {
-		return eMail;
-	}
-
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEmail(String eMail) {
+		this.email = eMail;
 	}
 
 	public String getPhoneNo() {
@@ -102,8 +95,8 @@ public class User extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", name=" + name + ", eMail=" + eMail + ", phoneNo=" + phoneNo + ", userName="
-				+ userName + ", password=" + password + ", playlist=" + playlist + "]";
+		return "User [id=" + id + ", eMail=" + email + ", phoneNo=" + phoneNo + ", userName=" + userName + ", password="
+				+ password + ", playlist=" + playlist + ", roles=" + roles + "]";
 	}
 
 }

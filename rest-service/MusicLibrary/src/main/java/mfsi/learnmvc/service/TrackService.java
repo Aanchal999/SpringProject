@@ -38,25 +38,25 @@ public class TrackService {
 		Track track = new Track();
 		track.setId(dto.getId());
 		track.setName(dto.getName());
-		track.setDateOfRelease(dto.getDateOfRelease());
+		//track.setDateOfRelease(dto.getDateOfRelease());
 		track.setMediaFormat(dto.getMediaFormat());
 		track.setMediaType(dto.getMediaType());
-		Album album = albumRepository.findById(dto.getAlbum().getId()).get();
-		track.setAlbum(album);
+		//Album album = albumRepository.findById(dto.getAlbum().getId()).get();
+		//track.setAlbum(album);
 		
-		Set<Playlist> playlists = new HashSet<>();
-		for(IdName o : dto.getPlaylists()) {
-			Playlist playlist = playlistRepository.findById(o.getId()).get();
-			playlists.add(playlist);
-		}
-		track.setPlaylists(playlists);
+		//Set<Playlist> playlists = new HashSet<>();
+		//for(IdName o : dto.getPlaylists()) {
+		//Playlist playlist = playlistRepository.findById(o.getId()).get();
+			//playlists.add(playlist);
+		//}
+		//track.setPlaylists(playlists);
 		
-		Set<Singer> singers = new HashSet<>();
-		for(IdName o : dto.getSingers()) {
-			Singer singer = singerRepository.findById(o.getId()).get();
-			singers.add(singer);
-		}
-		track.setSingers(singers);
+		//Set<Singer> singers = new HashSet<>();
+		//for(IdName o : dto.getSingers()) {
+		//	Singer singer = singerRepository.findById(o.getId()).get();
+		//	singers.add(singer);
+		//}
+		//track.setSingers(singers);
 		return track;
 	}
 
@@ -67,20 +67,20 @@ public class TrackService {
 		dto.setDateOfRelease(t.getDateOfRelease());
 		dto.setMediaFormat(t.getMediaFormat());
 		dto.setMediaType(t.getMediaType());
-		dto.setPath(t.getPath());
-		dto.setAlbum(new IdName(t.getAlbum().getId(), t.getAlbum().getName()));
-		
-		List<IdName> playlists = new ArrayList<>();
-		for (Playlist playlist : t.getPlaylists()) {
-			playlists.add(new IdName(playlist.getId(), playlist.getName()));
-		}
-		dto.setPlaylists(playlists);
-		
-		List<IdName> singers = new ArrayList<>();
-		for(Singer singer : t.getSingers()) {
-			singers.add(new IdName(singer.getId(), singer.getName()));
-		}
-		dto.setSingers(singers);
+//		dto.setPath(t.getPath());
+//		dto.setAlbum(new IdName(t.getAlbum().getId(), t.getAlbum().getName()));
+//		
+//		List<IdName> playlists = new ArrayList<>();
+//		for (Playlist playlist : t.getPlaylists()) {
+//			playlists.add(new IdName(playlist.getId(), playlist.getName()));
+//		}
+//		dto.setPlaylists(playlists);
+//		
+//		List<IdName> singers = new ArrayList<>();
+//		for(Singer singer : t.getSingers()) {
+//			singers.add(new IdName(singer.getId(), singer.getName()));
+//		}
+//		dto.setSingers(singers);
 
 		return dto;
 	}
