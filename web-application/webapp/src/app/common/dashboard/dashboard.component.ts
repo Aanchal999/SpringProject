@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import singers from '/src/app/files/singers.json'
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { SaveformComponent } from '../saveform/saveform.component';
+import { DeletemodalComponent } from '../saveform/deletemodal/deletemodal.component';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { SaveformComponent } from '../saveform/saveform.component';
 })
 export class DashboardComponent implements AfterViewInit {
 
-
+  searchKey: string;
+  p: number = 1;
 TrackList:any;
 SingerList:any;
   constructor(private dialog:MatDialog) {
@@ -23,18 +25,6 @@ SingerList:any;
 
    @ViewChild(MatPaginator) paginator:MatPaginator;
 
-
-   @Input() selected: boolean;
-   @Output() selectedChange = new EventEmitter<boolean>();
- 
-
- 
- 
- 
-   public toggleSelected() {
-     this.selected = !this.selected;
-     this.selectedChange.emit(this.selected);
-   }
 
 
    ngAfterViewInit() {
@@ -49,10 +39,21 @@ onCreate(){
   this.dialog.open(SaveformComponent,dialogconfig);
 }
 
+openModal(){
+  const dialogconfig = new MatDialogConfig();
+  dialogconfig.disableClose = false;
+  dialogconfig.autoFocus = true;
+  this.dialog.open(DeletemodalComponent,dialogconfig);
+}
 
 
-  applyFilter(filterValue: Event) {
-    this.TrackList.filter=((<HTMLInputElement>filterValue.target).value).toLowerCase().trim();
+
+  applyFilter() {
+    this.TrackList.tracks.filter=this.searchKey.toLowerCase().trim();
+  }
+
+  onSelect(selectedItem){
+    console.log("Selected Id:", selectedItem.id);
   }
 
 }

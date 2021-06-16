@@ -11,7 +11,7 @@ import { HeaderComponent } from './common/header/header.component';
 import { FooterComponent } from './common/footer/footer.component';
 import { SaveformComponent } from './common/saveform/saveform.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 import {MatListModule} from '@angular/material/list';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
@@ -51,6 +51,7 @@ import {MatTreeModule} from '@angular/material/tree';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { SingersComponent } from './sidebar/singers/singers.component';
 import { AddsingerComponent } from './common/saveform/addsinger/addsinger.component';
+import { DeletemodalComponent } from './common/saveform/deletemodal/deletemodal.component';
 
 
 @NgModule({
@@ -64,7 +65,8 @@ import { AddsingerComponent } from './common/saveform/addsinger/addsinger.compon
     DashboardComponent,
     SingersComponent,
     SaveformComponent,
-    AddsingerComponent
+    AddsingerComponent,
+    DeletemodalComponent
 
 
   ],
@@ -75,7 +77,7 @@ import { AddsingerComponent } from './common/saveform/addsinger/addsinger.compon
     AppRoutingModule,
     BrowserAnimationsModule,
 
-
+    NgxPaginationModule,
     MatRadioModule,
     MatIconModule,
     MatButtonModule,

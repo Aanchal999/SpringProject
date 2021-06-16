@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import singers from '/src/app/files/singers.json';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { AddsingerComponent } from 'src/app/common/saveform/addsinger/addsinger.component';
+import { DeletemodalComponent } from 'src/app/common/saveform/deletemodal/deletemodal.component';
 
 @Component({
   selector: 'app-singers',
@@ -43,7 +44,12 @@ onCreate(){
   this.dialog.open(AddsingerComponent,dialogconfig);
 }
 
-
+openModal(){
+  const dialogconfig = new MatDialogConfig();
+  dialogconfig.disableClose = false;
+  dialogconfig.autoFocus = true;
+  this.dialog.open(DeletemodalComponent,dialogconfig);
+}
 
 
 }

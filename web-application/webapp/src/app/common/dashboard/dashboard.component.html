@@ -11,12 +11,12 @@
 <div class="container-fluid jumbotron">
 <div class="row" id="top">
   <div class="col-lg-3 col-md-3">
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter($event)" placeholder="search"> 
+    <mat-form-field color="accent">
+      <input matInput [(ngModel)]="searchKey" (keyup)="applyFilter()" color="accent"> 
     </mat-form-field>
     <button mat-icon-button matTooltip="Click to search" class="iconbutton"
-      color="primary" >
-      <mat-icon>search</mat-icon>
+      color="accent" >
+      <mat-icon color="accent">search</mat-icon>
     </button>
   </div>
   <div class="col-lg-8 col-md-8" >
@@ -37,22 +37,25 @@
       <th>Edit</th>
       <th>Delete</th>
     </tr>
-    <tr *ngFor="let employee of TrackList.tracks">
-      <td>{{employee.id}}</td>
-      <td> {{employee.name}}</td>
-      <td>{{employee.dateOfRelease}}</td>
-      <td>{{employee.albumid}}</td>
+    <tr *ngFor="let track of TrackList.tracks | paginate: { itemsPerPage: 10, currentPage: p }">
+      <td>{{track.id}}</td>
+      <td>{{track.name}}</td>
+      <td>{{track.dateOfRelease}}</td>
+      <td>{{track.albumid}}</td>
       <td> <button mat-icon-button matTooltip="Click to Edit" (click)="onCreate()" class="iconbutton"
-        color="primary" >
+        color="primary" (click)="onSelect(track)">
         <mat-icon>edit</mat-icon>
       </button></td>
       <td> <button mat-icon-button matTooltip="Click to Delete" class="iconbutton"
-        color="warn" >
+        color="warn" (click)="openModal()">
         <mat-icon>delete</mat-icon>
       </button></td>
      
     </tr>
   </table>
+  <div class="pagination">
+		<pagination-controls (pageChange)="p = $event"></pagination-controls>
+	</div>
    <!--<mat-paginator class="paginator" [pageSizeOptions]="[5, 10, 50, 100]" showFirstLastButtons></mat-paginator>-->
 
   </div>

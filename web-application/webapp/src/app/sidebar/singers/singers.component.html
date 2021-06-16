@@ -11,8 +11,8 @@
 
     <div class="row" id="up">
         <div class="col-lg-3 col-md-3">
-          <mat-form-field>
-            <input matInput (keyup)="applyFilter($event)" placeholder="search" color="accent">   
+          <mat-form-field color="accent">
+            <input matInput (keyup)="applyFilter($event)">   
           </mat-form-field>
           <button mat-icon-button matTooltip="Click to search" class="iconbutton"
             color="accent" >
@@ -31,24 +31,7 @@
         <div class="col-lg-3 col-md-3 " *ngFor="let singer of SingerList.singers">
             <mat-card id="top" class="text-center" > 
 
-              <div>
-                <button mat-icon-button (click)="toggleSelected()" id="fav">
 
-                  <mat-icon
-                    *ngIf="selected"
-                    aria-label="Example icon-button with a heart icon" color="warn">
-                    favorite
-                  </mat-icon>
-                
-                  <mat-icon
-                    *ngIf="!selected"
-                    aria-label="Example icon-button with a heart icon">
-                    favorite_border
-                  </mat-icon>
-                
-                </button>
-              </div>
-              
                 <div id="image"  ><img mat-card-image src="assets\singer.png"
                  alt="Photo of a Aanchal">
                  <mat-card-content class="text-center">

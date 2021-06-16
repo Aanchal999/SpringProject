@@ -1,22 +1,16 @@
+import { IdName } from "./id-name";
+
 export class SingerModel {
-    id:String;
-    name:String;
-    gender:String;
-    nationality:String;
-    tracks:string;
+    id:string;
+    name:string;
+    gender:string;
+    nationality:string;
+    tracks:Array<IdName>;
     
 
     constructor(  
-        id:String,
-        gender:String,
-        name:String,
-        nationality:String,
-        tracks:string){
-        this.id=id;
+        tracks:Array<IdName>){
         this.tracks=tracks;
-        this.name=name;
-        this.gender= gender;
-        this.nationality= nationality;
-       
+
     }
 }
