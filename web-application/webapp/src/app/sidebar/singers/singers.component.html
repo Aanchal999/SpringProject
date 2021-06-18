@@ -12,10 +12,10 @@
     <div class="row" id="up">
         <div class="col-lg-3 col-md-3">
           <mat-form-field color="accent">
-            <input matInput (keyup)="applyFilter($event)">   
+            <input matInput [(ngModel)]= "keyword" (keyup)="applyFilter($event)">   
           </mat-form-field>
           <button mat-icon-button matTooltip="Click to search" class="iconbutton"
-            color="accent" >
+            color="accent" (click) = "searchSinger()">
             <mat-icon>search</mat-icon>
           </button>
         </div>
@@ -25,10 +25,9 @@
           <button id="button" class="btn btn-lg"  (click)="onCreate()" type="submit">Add Singer</button>
         </div>
       </div>
-    
 
 
-        <div class="col-lg-3 col-md-3 " *ngFor="let singer of SingerList.singers">
+        <div class="col-lg-3 col-md-3 " *ngFor="let singer of singerList">
             <mat-card id="top" class="text-center" > 
 
 
@@ -39,7 +38,7 @@
                         <div class="col-lg-1"></div>
                      <div class="col-lg-6">
                     <tr >
-                        <td>{{singer.name}}</td>
+                        <td [(ngModel)]= "id">{{singer.name}}</td>
                     </tr>
                     <tr >
                         <td>{{singer.gender}}</td>
@@ -51,7 +50,7 @@
                     <div class="col-lg-4">
                     
                         <td> <button mat-icon-button matTooltip="Click to Edit" class="iconbutton"
-                            color="primary" (click)="onCreate()" >
+                            color="primary" (click)="onCreate(singer)"  >
                             <mat-icon>edit</mat-icon>
                           </button></td>
                           <td> <button mat-icon-button matTooltip="Click to Delete" class="iconbutton"

@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule , routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-
+import { HttpClientModule } from '@angular/common/http';
 import { UserloginComponent } from './loginpage/userlogin/userlogin.component';
 import { UserregisterComponent } from './loginpage/userregister/userregister.component';
 import { HeaderComponent } from './common/header/header.component';
@@ -35,7 +35,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatNativeDateModule, MatRippleModule} from '@angular/material/core';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -52,7 +51,8 @@ import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { SingersComponent } from './sidebar/singers/singers.component';
 import { AddsingerComponent } from './common/saveform/addsinger/addsinger.component';
 import { DeletemodalComponent } from './common/saveform/deletemodal/deletemodal.component';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { AlbumsComponent } from './sidebar/albums/albums.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +66,8 @@ import { DeletemodalComponent } from './common/saveform/deletemodal/deletemodal.
     SingersComponent,
     SaveformComponent,
     AddsingerComponent,
-    DeletemodalComponent
+    DeletemodalComponent,
+    AlbumsComponent
 
 
   ],
@@ -76,14 +77,13 @@ import { DeletemodalComponent } from './common/saveform/deletemodal/deletemodal.
     MatSidenavModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    HttpClientModule,
     NgxPaginationModule,
     MatRadioModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
     MatListModule,
- 
     MatSidenavModule,
     MatAutocompleteModule,
     MatBadgeModule,

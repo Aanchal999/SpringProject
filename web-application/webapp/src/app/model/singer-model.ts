@@ -1,16 +1,12 @@
 import { IdName } from "./id-name";
 
-export class SingerModel {
+export class Singer{
     id:string;
     name:string;
     gender:string;
     nationality:string;
     tracks:Array<IdName>;
     
+    constructor(){};
 
-    constructor(  
-        tracks:Array<IdName>){
-        this.tracks=tracks;
-
-    }
 }

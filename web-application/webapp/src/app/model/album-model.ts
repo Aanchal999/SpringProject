@@ -1,15 +1,13 @@
+import { IdName } from "./id-name";
+
 export class AlbumModel {
+    id:string;
+    name:string; 
+    tracks:Array<IdName>;
 
-    id:String;
-    name:string;
-    tracks:string;
-
-    constructor(   id:String,
-        name:string,
-        tracks:string ){
-        this.id=id;
+    constructor( 
+        tracks:Array<IdName> ){        
         this.tracks=tracks;
-        this.name = name;
-      
+
     }
 }

@@ -53,7 +53,13 @@ openModal(){
   }
 
   onSelect(selectedItem){
-    console.log("Selected Id:", selectedItem.id);
+    const editData:Array<any> = [
+    {id: selectedItem.id},
+    {name: selectedItem.name},
+    {date: selectedItem.dateOfRelease},
+    {albumid:selectedItem.albumId}
+  ];
+    console.log(editData);
   }
 
 }
