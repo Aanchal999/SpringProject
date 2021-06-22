@@ -17,13 +17,13 @@
             <td >
                
                 <mat-form-field class="fullwidth">
-                    <input  matInput name="f1" type="text"  placeholder="Track Id" disabled  ngModel required #f1="ngModel" >
+                    <input  matInput name="f1" type="text"  placeholder="Track Id" disabled [(ngModel)]="track.id" ngModel required #f1="ngModel" >
                 </mat-form-field>
              </td>
 
                 <td >
                     <mat-form-field class="fullwidth">
-                        <input  matInput name="f2" type="text"  placeholder="Track Name"  ngModel required #f2="ngModel" >
+                        <input  matInput name="f2" type="text"  placeholder="Track Name" [(ngModel)]="track.name"  ngModel required #f2="ngModel" >
                     </mat-form-field>
                        <div *ngIf="f2.invalid && (f2.dirty || f2.touched)">                               
                        <mat-error *ngIf="f2.hasError('required')">
@@ -36,7 +36,7 @@
 
                  <td >
                     <mat-form-field class="fullwidth">
-                        <input  matInput name="3" type="text"  placeholder="Date Of Release"  ngModel required #f3="ngModel"  >
+                        <input  matInput name="3" type="text"  placeholder="Date Of Release" [(ngModel)]="track.dateOfRelease" ngModel required #f3="ngModel"  >
                     </mat-form-field>
                        <div *ngIf="f3.invalid && (f3.dirty || f3.touched)">                               
                        <mat-error *ngIf="f3.hasError('required')">
@@ -47,17 +47,13 @@
 
                  <td >
                     <mat-form-field class="fullwidth">
-                        <input  matInput name="3" type="text"  placeholder="AlbumId"  ngModel required #f3="ngModel"  >
+                        <input  matInput name="3" type="text"  placeholder="AlbumId" [(ngModel)]="track.album" ngModel #f3="ngModel"  >
                     </mat-form-field>
-                       <div *ngIf="f3.invalid && (f3.dirty || f3.touched)">                               
-                       <mat-error *ngIf="f3.hasError('required')">
-                        AlbumId is required.
-                       </mat-error>
-                      </div>
+                  
                  </td>
         </tr>
         <div class="row">
-            <button   type="submit" class="btn btn-lg submit"  md-raised-button  >Save</button>
+            <button   type="submit" class="btn btn-lg submit"  md-raised-button id="close" (click)="saveTrack()" >Save</button>
            <button  type="reset" class="btn btn-lg clear"  md-raised-button >Clear</button>
       </div>
     </form>

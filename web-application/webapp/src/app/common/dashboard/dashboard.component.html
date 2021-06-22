@@ -15,7 +15,7 @@
       <input matInput [(ngModel)]="searchKey" (keyup)="applyFilter()" color="accent"> 
     </mat-form-field>
     <button mat-icon-button matTooltip="Click to search" class="iconbutton"
-      color="accent" >
+      color="accent" (click) = "searchTrack()" >
       <mat-icon color="accent">search</mat-icon>
     </button>
   </div>
@@ -37,13 +37,13 @@
       <th>Edit</th>
       <th>Delete</th>
     </tr>
-    <tr *ngFor="let track of TrackList.tracks | paginate: { itemsPerPage: 10, currentPage: p }">
-      <td>{{track.id}}</td>
+    <tr *ngFor="let track of TrackList | paginate: { itemsPerPage: 10, currentPage: p }">
+      <td [(ngModel)] = "id">{{track.id}}</td>
       <td>{{track.name}}</td>
       <td>{{track.dateOfRelease}}</td>
       <td>{{track.albumid}}</td>
-      <td> <button mat-icon-button matTooltip="Click to Edit" (click)="onCreate()" class="iconbutton"
-        color="primary" (click)="onSelect(track)">
+      <td> <button mat-icon-button matTooltip="Click to Edit" (click)="onCreate(track)" class="iconbutton"
+        color="primary" >
         <mat-icon>edit</mat-icon>
       </button></td>
       <td> <button mat-icon-button matTooltip="Click to Delete" class="iconbutton"

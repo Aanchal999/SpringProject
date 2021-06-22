@@ -1,6 +1,6 @@
 import { IdName } from "./id-name";
 
-export class TrackModel {
+export class Track {
     id:string;
     name:string;
     mediaType:string;
@@ -11,14 +11,5 @@ export class TrackModel {
     playlists: Array<IdName>;
     singers: Array<IdName>;
  
-    constructor(  
-
-        album:IdName,
-        playlists: Array<IdName>,
-        singers: Array<IdName>,
-         ){
-        this.album= album;
-        this.playlists= playlists;
-        this.singers=singers;      
-    }
+    constructor(){};
 }

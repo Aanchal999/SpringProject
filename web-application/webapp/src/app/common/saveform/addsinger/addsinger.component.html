@@ -29,12 +29,12 @@
                 <td>
 
                     <mat-form-field class="fullwidth">
-                        <input matInput name="f1" type="text" placeholder="Track Id" disabled [(ngModel)]="singer.id"
+                        <input matInput name="f1" type="text" placeholder="Singer Id" disabled [(ngModel)]="singer?.id"
                             ngModel required #f1="ngModel">
                     </mat-form-field>
                 </td>
 
-                <td>
+             <!--   <td>
                     <mat-form-field class="fullwidth">
                         <input matInput name="f2" type="text" placeholder="Name" [(ngModel)]="singer.name" ngModel
                             required #f2="ngModel">
@@ -70,7 +70,7 @@
                             Nationality is required.
                         </mat-error>
                     </div>
-                </td>
+                </td>-->
             </tr>
             <div class="row">
                 <button type="submit" class="btn btn-lg submit" (click)="saveSinger()" md-raised-button

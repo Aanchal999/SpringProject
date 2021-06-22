@@ -53,6 +53,9 @@ import { AddsingerComponent } from './common/saveform/addsinger/addsinger.compon
 import { DeletemodalComponent } from './common/saveform/deletemodal/deletemodal.component';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { AlbumsComponent } from './sidebar/albums/albums.component';
+import { UsersComponent } from './sidebar/users/users.component';
+import { AdminsComponent } from './sidebar/admins/admins.component';
+import { PlaylistsComponent } from './sidebar/playlists/playlists.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +70,10 @@ import { AlbumsComponent } from './sidebar/albums/albums.component';
     SaveformComponent,
     AddsingerComponent,
     DeletemodalComponent,
-    AlbumsComponent
+    AlbumsComponent,
+    UsersComponent,
+    AdminsComponent,
+    PlaylistsComponent
 
 
   ],

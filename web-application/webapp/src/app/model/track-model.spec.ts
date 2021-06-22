@@ -1,7 +1,7 @@
-import { TrackModel } from './track-model';
+import { Track } from './track-model';
 
 describe('TrackModel', () => {
   it('should create an instance', () => {
-    expect(new TrackModel()).toBeTruthy();
+    expect(new Track()).toBeTruthy();
   });
 });

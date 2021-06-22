@@ -5,6 +5,7 @@ import singers from '/src/app/files/singers.json'
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { SaveformComponent } from '../saveform/saveform.component';
 import { DeletemodalComponent } from '../saveform/deletemodal/deletemodal.component';
+import { TrackService } from 'src/app/Service/track.service';
 
 
 @Component({
@@ -12,31 +13,36 @@ import { DeletemodalComponent } from '../saveform/deletemodal/deletemodal.compon
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements AfterViewInit {
+export class DashboardComponent implements OnInit {
 
+  keyword: string;
   searchKey: string;
   p: number = 1;
 TrackList:any;
 SingerList:any;
-  constructor(private dialog:MatDialog) {
-    this.TrackList = tracks
-    this.SingerList = singers
+  constructor(private dialog:MatDialog, public service: TrackService) {
+    this.TrackList = [];
+    this.SingerList = [];
    }
 
    @ViewChild(MatPaginator) paginator:MatPaginator;
 
+   ngOnInit() {
+    this.getTrack();
+  }
 
-
-   ngAfterViewInit() {
-     
-     this.TrackList.paginator=this.paginator;
-   }
+  getTrack() {
+    this.service.getTrack().subscribe((response) => {
+      this.TrackList = response;
+    });
+  }
  
 onCreate(){
   const dialogconfig = new MatDialogConfig();
   dialogconfig.disableClose = false;
   dialogconfig.autoFocus = true;
   this.dialog.open(SaveformComponent,dialogconfig);
+  
 }
 
 openModal(){
@@ -60,6 +66,12 @@ openModal(){
     {albumid:selectedItem.albumId}
   ];
     console.log(editData);
+  }
+  searchTrack() {
+    this.service.searchSinger(this.keyword).subscribe((item) => {
+      this.TrackList = item;
+      console.log(item);
+    });
   }
 
 }

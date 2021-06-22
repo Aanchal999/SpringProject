@@ -50,10 +50,17 @@ export class SingersComponent implements OnInit {
     ];
       console.log(editData);
 
-    const dialogconfig = new MatDialogConfig();
-    dialogconfig.disableClose = false;
-    dialogconfig.autoFocus = true;
-    this.dialog.open(AddsingerComponent, dialogconfig);
+   // const dialogconfig = new MatDialogConfig();
+    //dialogconfig.disableClose = false;
+    //dialogconfig.autoFocus = true;
+    //this.dialog.open(AddsingerComponent, dialogconfig);
+    
+
+    let config = new MatDialogConfig();
+    let dialogRef = this.dialog.open(AddsingerComponent, config);
+    dialogRef.componentInstance.singer = selectedItem;
+
+
   }
 
   openModal() {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, matDialogAnimations, MatDialogClose, MatDialogConfig } from '@angular/material/dialog';
 import { Singer } from 'src/app/model/singer-model';
 import { SingerService } from 'src/app/Service/singer-service.service';
@@ -10,14 +10,17 @@ import { SingerService } from 'src/app/Service/singer-service.service';
 })
 export class AddsingerComponent implements OnInit {
 
-  singer: Singer;
+
 
   constructor(public service: SingerService, private dialog: MatDialog) {
 
-    this.singer = new Singer();
   }
 
+  @Input() singer;
+
   ngOnInit(): void {
+    console.log(this.singer);
+
   }
 
   saveSinger() {
