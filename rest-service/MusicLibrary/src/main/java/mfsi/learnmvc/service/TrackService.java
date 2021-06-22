@@ -13,6 +13,7 @@ import mfsi.learnmvc.domain.Playlist;
 import mfsi.learnmvc.domain.Singer;
 import mfsi.learnmvc.domain.Track;
 import mfsi.learnmvc.dto.IdName;
+import mfsi.learnmvc.dto.SingerDto;
 import mfsi.learnmvc.dto.TrackDto;
 import mfsi.learnmvc.repository.AlbumRepository;
 import mfsi.learnmvc.repository.PlaylistRepository;
@@ -104,4 +105,16 @@ public class TrackService {
 		repository.deleteById(id);
 	}
 
+	public List<TrackDto> search(String keyword) {
+		if (keyword == null || keyword.isEmpty()) {
+			return getAll();
+		}
+
+		List<Track> tracks = repository.search(keyword);
+		List<TrackDto> dtos = new ArrayList<>();
+		for (Track track : tracks) {
+			dtos.add(mapper(track));
+		}
+		return dtos;
+	}
 }

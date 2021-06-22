@@ -128,7 +128,9 @@ public class TrackDto implements Serializable {
 	@Override
 	public String toString() {
 		return "TrackDto [id=" + id + ", name=" + name + ", mediaType=" + mediaType + ", mediaFormat=" + mediaFormat
-				+ ", dateOfRelease=" + dateOfRelease + ", path=" + path + "]";
+				+ ", dateOfRelease=" + dateOfRelease + ", path=" + path + ", album=" + album + ", playlists="
+				+ playlists + ", singers=" + singers + "]";
 	}
+
 
 }

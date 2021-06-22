@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import mfsi.learnmvc.dto.TrackDto;
 import mfsi.learnmvc.service.TrackService;
@@ -35,4 +36,9 @@ public class TrackController {
 		service.delete(id);
 	}
 
+	@RequestMapping(value = "/search", method = RequestMethod.GET)
+	public ResponseEntity<?> search(@RequestParam String keyword ){
+		ResponseEntity<?> response = new ResponseEntity<>(service.search(keyword), HttpStatus.OK);
+		return response;
+	}
 }
