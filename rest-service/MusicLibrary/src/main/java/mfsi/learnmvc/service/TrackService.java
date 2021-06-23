@@ -101,7 +101,7 @@ public class TrackService {
 		return mapper(track);
 	}
 
-	public void delete(Integer id) {
+	public void delete(Long id) {
 		repository.deleteById(id);
 	}
 

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import mfsi.learnmvc.domain.Singer;
 
 @Repository
-public interface SingerRepository extends CrudRepository<Singer, Integer> {
+public interface SingerRepository extends CrudRepository<Singer, Long> {
 
 	public List<Singer> findAll();
 

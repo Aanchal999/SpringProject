@@ -1,14 +1,13 @@
 package mfsi.learnmvc.dto;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.Set;
 
 public class SingerDto implements Serializable {
 
 	private static final long serialVersionUID = -4748616859922964772L;
 
-	private Integer id;
+	private Long id;
 
 	private String name;
 
@@ -22,11 +21,11 @@ public class SingerDto implements Serializable {
 		super();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
