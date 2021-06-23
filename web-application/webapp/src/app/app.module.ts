@@ -56,6 +56,8 @@ import { AlbumsComponent } from './sidebar/albums/albums.component';
 import { UsersComponent } from './sidebar/users/users.component';
 import { AdminsComponent } from './sidebar/admins/admins.component';
 import { PlaylistsComponent } from './sidebar/playlists/playlists.component';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { AddalbumComponent } from './common/saveform/addalbum/addalbum.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,8 @@ import { PlaylistsComponent } from './sidebar/playlists/playlists.component';
     AlbumsComponent,
     UsersComponent,
     AdminsComponent,
-    PlaylistsComponent
+    PlaylistsComponent,
+    AddalbumComponent
 
 
   ],
@@ -126,7 +129,7 @@ import { PlaylistsComponent } from './sidebar/playlists/playlists.component';
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
-
+    NgMultiSelectDropDownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -11,7 +11,7 @@
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
 
-<div class="container-fluid wrap">
+<!--<div class="container-fluid wrap">
     <div class="">
         <form class="text-center">
             <button mat-icon-button class="close-button" [mat-dialog-close]="true" id="close">
@@ -29,15 +29,15 @@
                 <td>
 
                     <mat-form-field class="fullwidth">
-                        <input matInput name="f1" type="text" placeholder="Singer Id" disabled [(ngModel)]="singer.id"
-                        ngDefaultControl  ngModel required #f1="ngModel">
+                        <input matInput name="f1" type="text" placeholder="Singer Id" disabled [(ngModel)]="album.id"
+                            ngModel required #f1="ngModel">
                     </mat-form-field>
                 </td>
 
                 <td>
                     <mat-form-field class="fullwidth">
-                        <input matInput name="f2" type="text" placeholder="Name" [(ngModel)]="singer.name" ngModel
-                            required #f2="ngModel" ngDefaultControl>
+                        <input matInput name="f2" type="text" placeholder="Name" [(ngModel)]="album.name" ngModel
+                            required #f2="ngModel">
                     </mat-form-field>
                     <div *ngIf="f2.invalid && (f2.dirty || f2.touched)">
                         <mat-error *ngIf="f2.hasError('required')">
@@ -50,27 +50,17 @@
 
                 <td>
                     <mat-form-field class="fullwidth">
-                        <input matInput name="3" type="text" placeholder="Gender" [(ngModel)]="singer.gender" ngModel
-                            required #f3="ngModel" ngDefaultControl>
+                        <input matInput name="3" type="text" placeholder="Date Of Release" [(ngModel)]="album.dateOfRelease" ngModel
+                            required #f3="ngModel">
                     </mat-form-field>
                     <div *ngIf="f3.invalid && (f3.dirty || f3.touched)">
                         <mat-error *ngIf="f3.hasError('required')">
-                            Gender is required.
+                            Date Of Release is required.
                         </mat-error>
                     </div>
                 </td>
 
-                <td>
-                    <mat-form-field class="fullwidth">
-                        <input matInput name="3" type="text" placeholder="Nationality" [(ngModel)]="singer.nationality"
-                            ngModel required #f3="ngModel" ngDefaultControl>
-                    </mat-form-field>
-                    <div *ngIf="f3.invalid && (f3.dirty || f3.touched)">
-                        <mat-error *ngIf="f3.hasError('required')">
-                            Nationality is required.
-                        </mat-error>
-                    </div>
-                </td>
+            
             </tr>
             <div class="row">
                 <button type="submit" class="btn btn-lg submit" (click)="saveSinger()" md-raised-button
@@ -79,4 +69,4 @@
             </div>
         </form>
     </div>
-</div>
+</div>-->

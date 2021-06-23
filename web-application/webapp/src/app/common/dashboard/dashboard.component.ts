@@ -22,7 +22,7 @@ TrackList:any;
 SingerList:any;
   constructor(private dialog:MatDialog, public service: TrackService) {
     this.TrackList = [];
-    this.SingerList = [];
+    
    }
 
    @ViewChild(MatPaginator) paginator:MatPaginator;
@@ -37,11 +37,14 @@ SingerList:any;
     });
   }
  
-onCreate(){
-  const dialogconfig = new MatDialogConfig();
-  dialogconfig.disableClose = false;
-  dialogconfig.autoFocus = true;
-  this.dialog.open(SaveformComponent,dialogconfig);
+onCreate(selectedItem){
+  // const dialogconfig = new MatDialogConfig();
+  // dialogconfig.disableClose = false;
+  // dialogconfig.autoFocus = true;
+  // this.dialog.open(SaveformComponent,dialogconfig);
+  let config = new MatDialogConfig();
+  let dialogRef = this.dialog.open(SaveformComponent, config);
+  dialogRef.componentInstance.track = selectedItem;
   
 }
 
