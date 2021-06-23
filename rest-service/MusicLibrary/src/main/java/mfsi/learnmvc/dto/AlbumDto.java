@@ -3,8 +3,6 @@ package mfsi.learnmvc.dto;
 import java.io.Serializable;
 import java.util.Set;
 
-import mfsi.learnmvc.domain.Track;
-
 public class AlbumDto implements Serializable {
 
 	private static final long serialVersionUID = -2632252449894727697L;
