@@ -1,10 +1,5 @@
 package mfsi.learnmvc.rest;
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> a5dc0b26530ef01bb416cfbd7b9c09114f6a5b11
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
