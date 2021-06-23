@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mfsi.learnmvc.domain.Singer;
+import mfsi.learnmvc.dto.IdName;
 import mfsi.learnmvc.dto.SingerDto;
 import mfsi.learnmvc.repository.SingerRepository;
 import mfsi.learnmvc.repository.TrackRepository;
@@ -102,6 +103,12 @@ public class SingerService {
 			dtos.add(mapper(singer));
 		}
 		return dtos;
+	}
+
+	public List<IdName> getSinger() {
+		List<Singer> singers = repository.findAll();
+		
+		return null ;
 	}
 
 }

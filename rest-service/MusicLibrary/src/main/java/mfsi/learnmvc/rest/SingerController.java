@@ -1,5 +1,10 @@
 package mfsi.learnmvc.rest;
 
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> a5dc0b26530ef01bb416cfbd7b9c09114f6a5b11
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,6 +45,12 @@ public class SingerController {
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
 	public ResponseEntity<?> search(@RequestParam String keyword) {
 		ResponseEntity<?> response = new ResponseEntity<>(service.search(keyword), HttpStatus.OK);
+		return response;
+	}
+	
+	@RequestMapping(value = "/getsinger", method = RequestMethod.GET)
+	public ResponseEntity<?> getSinger(){
+		ResponseEntity<?> response = new ResponseEntity<>(service.getSinger(), HttpStatus.OK);
 		return response;
 	}
 

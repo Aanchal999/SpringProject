@@ -22,7 +22,7 @@
   <div class="col-lg-8 col-md-8" >
   </div>
   <div class="col-lg-1 col-md-1" >
-    <button id="button" class="btn btn-lg" (click)="onCreate()" type="submit">Add Track</button>
+    <button id="button" class="btn btn-lg"  type="submit">Add Track</button>
   </div>
 </div>
 
@@ -38,7 +38,7 @@
       <th>Delete</th>
     </tr>
     <tr *ngFor="let track of TrackList | paginate: { itemsPerPage: 10, currentPage: p }">
-      <td [(ngModel)] = "id">{{track.id}}</td>
+      <td [(ngModel)] = "id"ngDefaultControl>{{track.id}}</td>
       <td>{{track.name}}</td>
       <td>{{track.dateOfRelease}}</td>
       <td>{{track.albumid}}</td>
