@@ -3,6 +3,7 @@ package mfsi.learnmvc.service;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.stereotype.Service;
 import mfsi.learnmvc.auth.ERole;
 import mfsi.learnmvc.domain.Role;
 import mfsi.learnmvc.domain.User;
+import mfsi.learnmvc.dto.IdName;
 import mfsi.learnmvc.dto.UserDto;
 import mfsi.learnmvc.repository.RoleRepository;
 import mfsi.learnmvc.repository.UserRepository;
@@ -45,30 +47,34 @@ public class UserService {
 	@Value("${security.default.admin.phone}")
 	private String phoneNo;
 
-	private User mapper(UserDto dto) {
-		User user = new User();
-		user.setId(dto.getId());
-		user.setName(dto.getName());
-		user.setEmail(dto.geteMail());
-		user.setPhoneNo(dto.getPhoneNo());
-
-		return user;
+	public void createAdminIfNotExists() {
+		if (existsByRole(ERole.APPLICATION_ADMIN.role())) {
+			return;
+		}
+		User admin = new User(username, email, encoder.encode(password));
+		admin.setName(name);
+		admin.setPhoneNo(phoneNo);
+		admin.setCreatedBy(AppConstant.SYSTEM);
+		admin.setUpdatedBy(AppConstant.SYSTEM);
+		Set<Role> roles = roleRepository.findAll();
+		admin.setRoles(roles);
+		repository.save(admin);
 	}
 
-	private UserDto mapper(User u) {
-		UserDto dto = new UserDto();
-		dto.setId(u.getId());
-		dto.setName(u.getName());
-		dto.seteMail(u.getEmail());
-		dto.setPhoneNo(u.getPhoneNo());
-
-//		Set<IdName> roles = new HashSet<>();
-//		for (Role role : u.getRoles()) {
-//			roles.add(new IdName(role.getId(), role.getName()));
-//		}
-//		dto.setRoles(roles);
-
-		return dto;
+	public UserDto create(UserDto dto) {
+		User user = mapper(dto);
+		if (user.getId() == null) {
+			user = repository.save(user);
+		} else {
+			User userDB = repository.findById(user.getId()).orElseThrow(() -> new RuntimeException("Invalid UserId."));
+			userDB.setName(user.getName());
+			userDB.setEmail(user.getEmail());
+			userDB.setUsername(user.getUsername());
+			userDB.setPassword(user.getPassword());
+			userDB.setPhoneNo(user.getPhoneNo());
+			user = repository.save(userDB);
+		}
+		return mapper(user);
 	}
 
 	public List<UserDto> getAll() {
@@ -80,13 +86,7 @@ public class UserService {
 		return dtos;
 	}
 
-	public UserDto save(UserDto dto) {
-		User user = mapper(dto);
-		user = repository.save(user);
-		return mapper(user);
-	}
-
-	public void delete(Long id) {
+	public void deleteById(Long id) {
 		repository.deleteById(id);
 	}
 
@@ -104,18 +104,42 @@ public class UserService {
 		return repository.existsByAnyRole(roles);
 	}
 
-	public void createAdminIfNotExists() {
-		if (existsByRole(ERole.APPLICATION_ADMIN.role())) {
-			return;
+	private User mapper(UserDto dto) {
+		User user = new User();
+		user.setId(dto.getId());
+		user.setName(dto.getName());
+		user.setEmail(dto.getEmail());
+		user.setPhoneNo(dto.getPhoneNo());
+
+		Set<Role> roles = new HashSet<>();
+		for (IdName o : dto.getRoles()) {
+			Optional<Role> roleOptional = roleRepository.findById(o.getId());
+			if (roleOptional.isPresent()) {
+				roles.add(roleOptional.get());
+			}
 		}
-		User admin = new User(username, email, encoder.encode(password));
-		admin.setName(name);
-		admin.setPhoneNo(phoneNo);
-		admin.setCreatedBy(AppConstant.SYSTEM);
-		admin.setUpdatedBy(AppConstant.SYSTEM);
-		Set<Role> roles = roleRepository.findAll();
-		admin.setRoles(roles);
-		repository.save(admin);
+		if (roles.isEmpty()) {
+			throw new RuntimeException(
+					"Either no roles are associated with this users or provided roles were unavailable.");
+		}
+		user.setRoles(roles);
+		return user;
+	}
+
+	private UserDto mapper(User u) {
+		UserDto dto = new UserDto();
+		dto.setId(u.getId());
+		dto.setName(u.getName());
+		dto.setEmail(u.getEmail());
+		dto.setPhoneNo(u.getPhoneNo());
+
+		Set<IdName> roles = new HashSet<>();
+		for (Role role : u.getRoles()) {
+			roles.add(new IdName(role.getId(), role.getName()));
+		}
+		dto.setRoles(roles);
+
+		return dto;
 	}
 
 }

@@ -11,7 +11,7 @@ public class UserDto implements Serializable {
 
 	private String name;
 
-	private String eMail;
+	private String email;
 
 	private String phoneNo;
 
@@ -37,12 +37,12 @@ public class UserDto implements Serializable {
 		this.name = name;
 	}
 
-	public String geteMail() {
-		return eMail;
+	public String getEmail() {
+		return email;
 	}
 
-	public void seteMail(String eMail) {
-		this.eMail = eMail;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getPhoneNo() {
@@ -63,7 +63,7 @@ public class UserDto implements Serializable {
 
 	@Override
 	public String toString() {
-		return "UserDto [id=" + id + ", name=" + name + ", eMail=" + eMail + ", phoneNo=" + phoneNo + ", roles=" + roles
+		return "UserDto [id=" + id + ", name=" + name + ", eMail=" + email + ", phoneNo=" + phoneNo + ", roles=" + roles
 				+ "]";
 	}
 
