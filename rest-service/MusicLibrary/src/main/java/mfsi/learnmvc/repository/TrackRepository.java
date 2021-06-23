@@ -10,10 +10,10 @@ import org.springframework.stereotype.Repository;
 import mfsi.learnmvc.domain.Track;
 
 @Repository
-public interface TrackRepository extends CrudRepository<Track, Integer>{
+public interface TrackRepository extends CrudRepository<Track, Long> {
 	public List<Track> findAll();
-	
+
 	@Query("SELECT o FROM Track o WHERE o.name LIKE %:keyword% OR o.album LIKE %:keyword%")
 	public List<Track> search(@Param("keyword") String keyword);
-	
+
 }

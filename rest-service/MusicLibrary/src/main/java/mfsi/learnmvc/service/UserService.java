@@ -8,11 +8,9 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import mfsi.learnmvc.auth.ERole;
 import mfsi.learnmvc.domain.Role;
-import mfsi.learnmvc.domain.Track;
 import mfsi.learnmvc.domain.User;
-import mfsi.learnmvc.dto.IdName;
-import mfsi.learnmvc.dto.TrackDto;
 import mfsi.learnmvc.dto.UserDto;
 import mfsi.learnmvc.repository.RoleRepository;
 import mfsi.learnmvc.repository.UserRepository;
@@ -21,10 +19,10 @@ import mfsi.learnmvc.repository.UserRepository;
 public class UserService {
 
 	@Autowired
-	private RoleRepository roleRepository;
-	
+	private UserRepository repository;
+
 	@Autowired
-	private UserRepository userRepository;
+	private RoleRepository roleRepository;
 
 	private User mapper(UserDto dto) {
 		User user = new User();
@@ -51,8 +49,9 @@ public class UserService {
 
 		return dto;
 	}
+
 	public List<UserDto> getAll() {
-		List<User> users = userRepository.findAll();
+		List<User> users = repository.findAll();
 		List<UserDto> dtos = new ArrayList<>();
 		for (User user : users) {
 			dtos.add(mapper(user));
@@ -62,12 +61,38 @@ public class UserService {
 
 	public UserDto save(UserDto dto) {
 		User user = mapper(dto);
-		user = userRepository.save(user);
+		user = repository.save(user);
 		return mapper(user);
 	}
 
-	public void delete(Integer id) {
-		userRepository.deleteById(id);
+	public void delete(Long id) {
+		repository.deleteById(id);
 	}
-	
+
+	public boolean existsByRole(String roleName) {
+		Role role = roleRepository.findByName(roleName).orElse(null);
+		if (role != null) {
+			return existsByRole(role);
+		}
+		return false;
+	}
+
+	public boolean existsByRole(Role role) {
+		Set<Role> roles = new HashSet<Role>();
+		roles.add(role);
+		return repository.existsByAnyRole(roles);
+	}
+
+	public void createAdminIfNotExists() {
+		if (existsByRole(ERole.APPLICATION_ADMIN.role())) {
+			return;
+		}
+		User admin = new User("admin", "admin@gmail.com", "12345678");
+		admin.setName("Admin");
+		admin.setUsername("admin");
+		Set<Role> roles = roleRepository.findAll();
+		admin.setRoles(roles);
+		repository.save(admin);
+	}
+
 }

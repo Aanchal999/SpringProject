@@ -79,7 +79,7 @@ public class PlaylistService {
 		return mapper(playlist);
 	}
 	
-	public void delete(Integer id) {
+	public void delete(Long id) {
 		playlistRepository.deleteById(id);
 	}
 }

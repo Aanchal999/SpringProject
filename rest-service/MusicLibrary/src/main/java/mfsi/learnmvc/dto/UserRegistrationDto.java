@@ -2,9 +2,9 @@ package mfsi.learnmvc.dto;
 
 import java.io.Serializable;
 
-public class LoginDto implements Serializable {
+public class UserRegistrationDto implements Serializable {
 
-	private static final long serialVersionUID = 7328974526044039765L;
+	private static final long serialVersionUID = -7175658333501995040L;
 
 	private String username;
 
@@ -12,7 +12,7 @@ public class LoginDto implements Serializable {
 
 	private String password;
 
-	public LoginDto() {
+	public UserRegistrationDto() {
 		super();
 	}
 
@@ -42,7 +42,7 @@ public class LoginDto implements Serializable {
 
 	@Override
 	public String toString() {
-		return "LoginDto [username=" + username + ", email=" + email + ", password=" + password + "]";
+		return "UserRegisterationDto [username=" + username + ", email=" + email + ", password=" + password + "]";
 	}
 
 }

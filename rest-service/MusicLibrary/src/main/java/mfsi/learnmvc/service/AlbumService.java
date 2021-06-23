@@ -64,7 +64,7 @@ public class AlbumService {
 		return mapper(album);
 	}
 
-	public void delete(Integer id) {
+	public void delete(Long id) {
 		albumRepository.deleteById(id);
 	}
 }

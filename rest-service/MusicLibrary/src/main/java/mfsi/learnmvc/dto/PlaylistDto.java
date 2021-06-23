@@ -7,7 +7,7 @@ public class PlaylistDto implements Serializable {
 
 	private static final long serialVersionUID = -1676020497454233617L;
 
-	private Integer id;
+	private Long id;
 
 	private String name;
 
@@ -19,11 +19,11 @@ public class PlaylistDto implements Serializable {
 		super();
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

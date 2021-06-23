@@ -1,7 +1,10 @@
 package mfsi.learnmvc.rest;
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> a5dc0b26530ef01bb416cfbd7b9c09114f6a5b11
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,10 +21,10 @@ import mfsi.learnmvc.service.SingerService;
 @RestController
 @RequestMapping("/singer")
 public class SingerController {
-	
+
 	@Autowired
 	private SingerService service;
-	
+
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public ResponseEntity<?> getAll() {
 		ResponseEntity<?> response = new ResponseEntity<>(service.getAll(), HttpStatus.OK);
@@ -33,14 +36,14 @@ public class SingerController {
 		ResponseEntity<?> response = new ResponseEntity<>(service.save(dto), HttpStatus.OK);
 		return response;
 	}
-	
+
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-	public void delete(@PathVariable Integer id) {
+	public void delete(@PathVariable Long id) {
 		service.delete(id);
 	}
-	
+
 	@RequestMapping(value = "/search", method = RequestMethod.GET)
-	public ResponseEntity<?> search(@RequestParam String keyword ){
+	public ResponseEntity<?> search(@RequestParam String keyword) {
 		ResponseEntity<?> response = new ResponseEntity<>(service.search(keyword), HttpStatus.OK);
 		return response;
 	}
@@ -50,6 +53,5 @@ public class SingerController {
 		ResponseEntity<?> response = new ResponseEntity<>(service.getSinger(), HttpStatus.OK);
 		return response;
 	}
-
 
 }

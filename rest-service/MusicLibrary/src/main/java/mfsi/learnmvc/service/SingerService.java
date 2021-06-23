@@ -88,7 +88,7 @@ public class SingerService {
 		return mapper(singer);
 	}
 
-	public void delete(Integer id) {
+	public void delete(Long id) {
 		repository.deleteById(id);
 	}
 

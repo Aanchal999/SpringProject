@@ -4,9 +4,6 @@ import java.util.Date;
 import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -15,10 +12,6 @@ import mfsi.learnmvc.dto.TrackDto;
 
 @Entity
 public class Track extends BaseEntity {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 
 	private String mediaType;
 
@@ -40,14 +33,6 @@ public class Track extends BaseEntity {
 
 	public Track() {
 		super();
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public Track(TrackDto dto) {
@@ -114,9 +99,8 @@ public class Track extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "Track [id=" + id + ", mediaType=" + mediaType + ", mediaFormat=" + mediaFormat + ", dateOfRelease="
-				+ dateOfRelease + ", path=" + path + ", album=" + album + ", playlists=" + playlists + ", singers="
-				+ singers + "]";
+		return "Track [mediaType=" + mediaType + ", mediaFormat=" + mediaFormat + ", dateOfRelease=" + dateOfRelease
+				+ ", path=" + path + ", album=" + album + ", playlists=" + playlists + ", singers=" + singers + "]";
 	}
 
 }

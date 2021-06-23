@@ -3,19 +3,12 @@ package mfsi.learnmvc.domain;
 import java.util.Set;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
 @Entity
 public class Singer extends BaseEntity {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
 
 	private String gender;
 
@@ -27,14 +20,6 @@ public class Singer extends BaseEntity {
 
 	public Singer() {
 		super();
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getGender() {
@@ -63,7 +48,7 @@ public class Singer extends BaseEntity {
 
 	@Override
 	public String toString() {
-		return "Singer [id=" + id + ", gender=" + gender + ", nationality=" + nationality + ", tracks=" + tracks + "]";
+		return "Singer [gender=" + gender + ", nationality=" + nationality + ", tracks=" + tracks + "]";
 	}
 
 }

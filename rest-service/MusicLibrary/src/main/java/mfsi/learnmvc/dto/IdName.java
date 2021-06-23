@@ -6,7 +6,7 @@ public class IdName implements Serializable {
 
 	private static final long serialVersionUID = -8271508022460523683L;
 
-	private Integer id;
+	private Long id;
 
 	private String name;
 
@@ -14,17 +14,17 @@ public class IdName implements Serializable {
 		super();
 	}
 
-	public IdName(Integer id, String name) {
+	public IdName(Long id, String name) {
 		super();
 		this.id = id;
 		this.name = name;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

@@ -12,7 +12,7 @@ public class TrackDto implements Serializable {
 
 	private static final long serialVersionUID = -567668572996723066L;
 
-	private Integer id;
+	private Long id;
 
 	private String name;
 
@@ -53,11 +53,11 @@ public class TrackDto implements Serializable {
 
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

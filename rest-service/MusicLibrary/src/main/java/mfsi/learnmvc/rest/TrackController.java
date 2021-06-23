@@ -32,7 +32,7 @@ public class TrackController {
 	}
 	
 	@RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-	public void delete(@PathVariable Integer id) {
+	public void delete(@PathVariable Long id) {
 		service.delete(id);
 	}
 
