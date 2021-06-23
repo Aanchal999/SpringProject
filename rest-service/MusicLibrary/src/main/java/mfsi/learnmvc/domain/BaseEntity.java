@@ -7,6 +7,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @MappedSuperclass
 public class BaseEntity {
 
@@ -16,8 +19,10 @@ public class BaseEntity {
 
 	private String name;
 
+	@CreationTimestamp
 	private Date createdOn;
 
+	@UpdateTimestamp
 	private Date updatedOn;
 
 	private String createdBy;

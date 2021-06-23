@@ -37,20 +37,13 @@ public class AuthService {
 	private AuthenticationManager authenticationManager;
 
 	@Autowired
-	JwtUtil jwtUtil;
+	private JwtUtil jwtUtil;
 
 	@Autowired
 	private PasswordEncoder encoder;
 
 	public void register(UserRegistrationDto userRegistration) {
-		User user = new User(userRegistration.getUsername(), userRegistration.getEmail(),
-				encoder.encode(userRegistration.getPassword()));
-
-		Role defaultRole = roleRepository.findByName(ERole.USER.role()).get();
-		Set<Role> roles = new HashSet<>();
-		roles.add(defaultRole);
-
-		user.setRoles(roles);
+		User user = mapper(userRegistration);
 		repository.save(user);
 	}
 
@@ -74,11 +67,27 @@ public class AuthService {
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 		List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
 				.collect(Collectors.toList());
-
 		JwtDto jwtDto = new JwtDto(jwt, userDetails.getId(), userDetails.getUsername(), userDetails.getEmail(), roles);
-
 		return jwtDto;
+	}
 
+	private User mapper(UserRegistrationDto userRegistration) {
+		User user = new User();
+
+		user.setName(userRegistration.getName());
+		user.setUsername(userRegistration.getUsername());
+		user.setEmail(userRegistration.getEmail());
+		user.setPassword(encoder.encode(userRegistration.getPassword()));
+		user.setPhoneNo(userRegistration.getPhoneNo());
+		user.setCreatedBy(userRegistration.getUsername());
+		user.setUpdatedBy(userRegistration.getUsername());
+
+		Role defaultRole = roleRepository.findByName(ERole.USER.role()).get();
+		Set<Role> roles = new HashSet<>();
+		roles.add(defaultRole);
+		user.setRoles(roles);
+
+		return user;
 	}
 
 }

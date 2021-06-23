@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import mfsi.learnmvc.auth.ERole;
@@ -14,6 +16,7 @@ import mfsi.learnmvc.domain.User;
 import mfsi.learnmvc.dto.UserDto;
 import mfsi.learnmvc.repository.RoleRepository;
 import mfsi.learnmvc.repository.UserRepository;
+import mfsi.learnmvc.util.AppConstant;
 
 @Service
 public class UserService {
@@ -23,6 +26,24 @@ public class UserService {
 
 	@Autowired
 	private RoleRepository roleRepository;
+
+	@Autowired
+	private PasswordEncoder encoder;
+
+	@Value("${security.default.admin.name}")
+	private String name;
+
+	@Value("${security.default.admin.email}")
+	private String email;
+
+	@Value("${security.default.admin.username}")
+	private String username;
+
+	@Value("${security.default.admin.password}")
+	private String password;
+
+	@Value("${security.default.admin.phone}")
+	private String phoneNo;
 
 	private User mapper(UserDto dto) {
 		User user = new User();
@@ -87,9 +108,11 @@ public class UserService {
 		if (existsByRole(ERole.APPLICATION_ADMIN.role())) {
 			return;
 		}
-		User admin = new User("admin", "admin@gmail.com", "12345678");
-		admin.setName("Admin");
-		admin.setUsername("admin");
+		User admin = new User(username, email, encoder.encode(password));
+		admin.setName(name);
+		admin.setPhoneNo(phoneNo);
+		admin.setCreatedBy(AppConstant.SYSTEM);
+		admin.setUpdatedBy(AppConstant.SYSTEM);
 		Set<Role> roles = roleRepository.findAll();
 		admin.setRoles(roles);
 		repository.save(admin);

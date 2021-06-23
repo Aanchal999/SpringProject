@@ -4,7 +4,9 @@ import java.io.Serializable;
 
 public class UserRegistrationDto implements Serializable {
 
-	private static final long serialVersionUID = -7175658333501995040L;
+	private static final long serialVersionUID = 7729141582300609141L;
+
+	private String name;
 
 	private String username;
 
@@ -12,8 +14,27 @@ public class UserRegistrationDto implements Serializable {
 
 	private String password;
 
+	private String phoneNo;
+
 	public UserRegistrationDto() {
 		super();
+	}
+
+	public UserRegistrationDto(String name, String username, String email, String password, String phoneNo) {
+		super();
+		this.name = name;
+		this.username = username;
+		this.email = email;
+		this.password = password;
+		this.phoneNo = phoneNo;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getUsername() {
@@ -40,9 +61,18 @@ public class UserRegistrationDto implements Serializable {
 		this.password = password;
 	}
 
+	public String getPhoneNo() {
+		return phoneNo;
+	}
+
+	public void setPhoneNo(String phoneNo) {
+		this.phoneNo = phoneNo;
+	}
+
 	@Override
 	public String toString() {
-		return "UserRegisterationDto [username=" + username + ", email=" + email + ", password=" + password + "]";
+		return "UserRegistrationDto [name=" + name + ", username=" + username + ", email=" + email + ", password="
+				+ password + ", phoneNo=" + phoneNo + "]";
 	}
 
 }
