@@ -1,0 +1,72 @@
+{
+    "singers": [
+        {
+            "id": 1,
+            "name": "Singer A",
+            "gender": "Male",
+            "nationality": "India"
+        },
+        {
+            "id": 2,
+            "name": "Singer B",
+            "gender": "Male",
+            "nationality": "India"
+        },
+        {
+            "id": 3,
+            "name": "Singer C",
+            "gender": "Male",
+            "nationality": "India"
+        },
+        {
+            "id": 3,
+            "name": "Singer D",
+            "gender": "Female",
+            "nationality": "India"
+        },
+        {
+            "id": 4,
+            "name": "Singer E",
+            "gender": "Male",
+            "nationality": "India"
+        },
+        {
+            "id": 5,
+            "name": "Singer F",
+            "gender": "Female",
+            "nationality": "India"
+        },
+        {
+            "id": 6,
+            "name": "Singer G",
+            "gender": "Male",
+            "nationality": "India"
+        },
+        {
+            "id": 7,
+            "name": "Singer H",
+            "gender": "Female",
+            "nationality": "India"
+        },
+        {
+            "id": 8,
+            "name": "Singer I",
+            "gender": "Male",
+            "nationality": "India"
+        },
+        {
+            "id": 9,
+            "name": "Singer J",
+            "gender": "Male",
+            "nationality": "India"
+        },
+        {
+            "id": 10,
+            "name": "Singer K",
+            "gender": "Female",
+            "nationality": "India"
+        }
+
+
+    ]
+}

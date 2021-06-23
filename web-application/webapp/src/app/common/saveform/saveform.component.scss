@@ -1,0 +1,29 @@
+.wrapper{
+    height: 200px;
+}
+
+.submit{
+    color: white;
+    background-color: #55ce63 ;
+    
+}
+
+.clear{
+    color: white;
+    background-color: #fd4b54 ;
+    margin:10px;
+}
+
+.close-button{
+    float: right;
+    
+    right:-20px;
+  }
+  
+  .close-icon {
+    transition: 1s ease-in-out;
+  }
+  
+  .close-icon:hover {
+    transform: rotate(180deg);
+  }

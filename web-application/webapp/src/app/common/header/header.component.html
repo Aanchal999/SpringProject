@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<mat-sidenav-container >
+    <mat-toolbar >
+      <div class="form-inline " >
+        <ul class="navbar-nav">
+          <li>
+      <button mat-icon-button class="example-icon" (click)="sidenav.open()" >
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a>My App</a>
+    </li>
+
+          <li class="nav-item active">
+            <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
+          </li>
+    
+          <!-- Dropdown -->
+
+    
+        </ul>
+
+      </div>
+
+
+      <span class="example-spacer"></span>
+      
+      <form class="form-inline">
+        <div class="dropdown dropdown-right" >
+          <a  href=""><i class="fa fa-ellipsis-v dropbtn"></i></a>
+          
+          <div class="dropdown-content">
+            <a href="#"><i class="fa fa-key"></i>Change password</a>
+            <a href="#"><i class="fa fa-user"></i>My Profile</a>
+            <a href="#"><i class="fa fa-sign-out"></i>Log Out</a>
+          </div>
+        </div>
+      </form>
+
+    </mat-toolbar>
+
+</mat-sidenav-container>
+
+<mat-sidenav class="sidebar" #sidenav (keydown.escape)="close()" disableClose>
+ 
+  <a (click)="close()"><i class="fa fa-2x fa-arrow-circle-o-left" aria-hidden="true"></i></a>
+
+  <div class="sidebar-collapse">
+    <ul>
+      <li>
+        <a href="/playlists"><i class="fa fa-play-circle" ></i> Playlists</a>
+      </li>
+     
+      <li>
+        <a href="/singers"><i class="fa fa-user"></i> Singers</a>
+      </li>
+      <li>
+        <a  href="/albums"><i class="fa  fa-th-list"></i>Albums</a>
+      </li>
+      <li>
+        <a href="/songs"><i class="fa fa-headphones" ></i> Songs</a>
+      </li>
+      <li>
+        <a href="/users"><i class="fa  fa-users" ></i> Users</a>
+      </li>
+      <li>
+        <a href="/admins"><i class="fa  fa-pencil-square-o" ></i> Admins</a>
+      </li>
+   
+    </ul>
+
+  </div>
+</mat-sidenav>
+
+
+
+
+
