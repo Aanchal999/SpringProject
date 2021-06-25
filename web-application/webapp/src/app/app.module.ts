@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule , routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { UserloginComponent } from './loginpage/userlogin/userlogin.component';
 import { UserregisterComponent } from './loginpage/userregister/userregister.component';
 import { HeaderComponent } from './common/header/header.component';
@@ -58,6 +58,7 @@ import { AdminsComponent } from './sidebar/admins/admins.component';
 import { PlaylistsComponent } from './sidebar/playlists/playlists.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AddalbumComponent } from './common/saveform/addalbum/addalbum.component';
+import { InterceptorService } from './Service/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -131,7 +132,13 @@ import { AddalbumComponent } from './common/saveform/addalbum/addalbum.component
     MatTreeModule,
     NgMultiSelectDropDownModule.forRoot(),
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InterceptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent],
   entryComponents: [SaveformComponent]
 })

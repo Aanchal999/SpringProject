@@ -117,4 +117,8 @@ public class TrackService {
 		}
 		return dtos;
 	}
+
+	public List<IdName> selector() {
+		return repository.selector();
+	}
 }

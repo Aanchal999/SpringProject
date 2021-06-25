@@ -11,12 +11,12 @@ export class TrackService {
   constructor(public http: HttpClient) { }
 
   saveTrack(track: Track) {
-    const url = environment.origin + '/track/save';
+    const url = '/track/save';
     return this.http.post(url, track);
   }
 
   getTrack() {
-    const url = environment.origin + '/track/all';
+    const url = '/track/all';
     return this.http.get(url);
   }
 
@@ -30,7 +30,7 @@ export class TrackService {
       }
     });
     console.log(keyword);
-    const url = environment.origin + '/track/search';
+    const url = '/track/search';
     return this.http.get(url, { params: params });
   }
 }

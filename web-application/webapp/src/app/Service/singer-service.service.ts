@@ -12,12 +12,17 @@ export class SingerService {
   constructor(public http: HttpClient) { }
 
   saveSinger(singer: Singer) {
-    const url = environment.origin + '/singer/save';
+    const url = '/singer/save';
     return this.http.post(url, singer);
   }
 
   getSinger() {
-    const url = environment.origin + '/singer/all';
+    const url = '/singer/all';
+    return this.http.get(url);
+  }
+
+  selector() {
+    const url = '/singer/selector';
     return this.http.get(url);
   }
 
@@ -31,12 +36,12 @@ export class SingerService {
       }
     });
     console.log(keyword);
-    const url = environment.origin + '/singer/search';
+    const url = '/singer/search';
     return this.http.get(url, { params: params });
   }
 
-  deleteSinger(id: number){
-    const url = environment.origin + '/singer/delete/' +id;
+  deleteSinger(id: number) {
+    const url = '/singer/delete/' + id;
     return this.http.delete(url);
   }
 }

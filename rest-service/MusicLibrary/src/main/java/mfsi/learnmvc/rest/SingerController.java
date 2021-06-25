@@ -43,10 +43,11 @@ public class SingerController {
 		return response;
 	}
 	
-	@RequestMapping(value = "/getsinger", method = RequestMethod.GET)
-	public ResponseEntity<?> getSinger(){
-		ResponseEntity<?> response = new ResponseEntity<>(service.getSinger(), HttpStatus.OK);
+	@RequestMapping(value = "/selector", method = RequestMethod.GET)
+	public ResponseEntity<?> selector() {
+		ResponseEntity<?> response = new ResponseEntity<>(service.selector(), HttpStatus.OK);
 		return response;
 	}
+	
 
 }

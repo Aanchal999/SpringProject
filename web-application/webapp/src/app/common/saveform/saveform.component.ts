@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { IdName } from 'src/app/model/id-name';
 import { Track } from 'src/app/model/track-model';
+import { SingerService } from 'src/app/Service/singer-service.service';
 import { TrackService } from 'src/app/Service/track.service';
 
 @Component({
@@ -12,34 +14,33 @@ export class SaveformComponent implements OnInit {
 
 
   name = 'Angular';
-  dropdownList = [];
+
   selectedItems = [];
   dropdownSettings = {};
+  singerSelectorList: Array<IdName>;
 
-  constructor(public service: TrackService, private dialog: MatDialog) {}
+  constructor(public service: TrackService, private dialog: MatDialog, public singerService: SingerService) {
+    this.track = new Track();
+    this.singerService.selector().subscribe((response: any) => {
+      this.singerSelectorList = response;
+    })
+  }
 
   @Input() track;
   ngOnInit(){
 
 
-    this.dropdownList = [
-      { item_id: 1, item_text: 'Mumbai' },
-      { item_id: 2, item_text: 'Bangaluru' },
-      { item_id: 3, item_text: 'Pune' },
-      { item_id: 4, item_text: 'Navsari' },
-      { item_id: 5, item_text: 'New Delhi' }
-    ];
+
     this.selectedItems = [
-      { item_id: 3, item_text: 'Pune' },
-      { item_id: 4, item_text: 'Navsari' }
+ 
     ];
     this.dropdownSettings = {
       singleSelection: false,
-      idField: 'item_id',
-      textField: 'item_text',
+      idField: 'id',
+      textField: 'name',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 3,
+      itemsShowLimit: 5,
       allowSearchFilter: true
     };
 

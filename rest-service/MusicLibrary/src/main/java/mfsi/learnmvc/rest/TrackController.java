@@ -41,4 +41,11 @@ public class TrackController {
 		ResponseEntity<?> response = new ResponseEntity<>(service.search(keyword), HttpStatus.OK);
 		return response;
 	}
+	
+	@RequestMapping(value = "/selector", method = RequestMethod.GET)
+	public ResponseEntity<?> selector() {
+		ResponseEntity<?> response = new ResponseEntity<>(service.selector(), HttpStatus.OK);
+		return response;
+	}
+	
 }

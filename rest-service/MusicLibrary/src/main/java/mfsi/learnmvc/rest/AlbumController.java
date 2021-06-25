@@ -36,4 +36,15 @@ public class AlbumController {
 		service.delete(id);
 	}
 
+	@RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
+	public ResponseEntity<?> detail(@PathVariable Long id) {
+		ResponseEntity<?> response = new ResponseEntity<>(service.detail(id), HttpStatus.OK);
+		return response;
+	}
+	
+	@RequestMapping(value = "/selector", method = RequestMethod.GET)
+	public ResponseEntity<?> selector() {
+		ResponseEntity<?> response = new ResponseEntity<>(service.selector(), HttpStatus.OK);
+		return response;
+	}
 }

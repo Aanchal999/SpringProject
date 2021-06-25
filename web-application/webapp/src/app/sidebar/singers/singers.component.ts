@@ -42,19 +42,19 @@ export class SingersComponent implements OnInit {
 
   onCreate(selectedItem) {
 
-    const editData:Array<any> = [
-      {id: selectedItem.id},
-      {name: selectedItem.name},
-      {date: selectedItem.dateOfRelease},
-      {albumid:selectedItem.albumId}
+    const editData: Array<any> = [
+      { id: selectedItem.id },
+      { name: selectedItem.name },
+      { date: selectedItem.dateOfRelease },
+      { albumid: selectedItem.albumId }
     ];
-      console.log(editData);
+    console.log(editData);
 
-   // const dialogconfig = new MatDialogConfig();
+    // const dialogconfig = new MatDialogConfig();
     //dialogconfig.disableClose = false;
     //dialogconfig.autoFocus = true;
     //this.dialog.open(AddsingerComponent, dialogconfig);
-    
+
 
     let config = new MatDialogConfig();
     let dialogRef = this.dialog.open(AddsingerComponent, config);
@@ -63,11 +63,16 @@ export class SingersComponent implements OnInit {
 
   }
 
+  add() {
+    let config = new MatDialogConfig();
+    let dialogRef = this.dialog.open(AddsingerComponent, config);
+  }
+
   openModal() {
     const dialogconfig = new MatDialogConfig();
     dialogconfig.disableClose = false;
     dialogconfig.autoFocus = true;
-    const modalRef= this.dialog.open(DeletemodalComponent, dialogconfig);
+    const modalRef = this.dialog.open(DeletemodalComponent, dialogconfig);
     (<DeletemodalComponent>modalRef.componentInstance).id = this.id;
   }
 

@@ -3,13 +3,22 @@
     background-color:#f2f7f8!important;
     height:100%;
     margin-bottom: 0;
-    height: 700px;
+   
  }
-
+ #back{
+    background: url(https://i.pinimg.com/originals/cc/d2/96/ccd2965fda1b5090f7500d7753040296.jpg) no-repeat center center ;
+    background-size: cover;
+  }
 h2
 {
     text-align: center;
     font-weight: bold;
+}
+p{
+    margin-left: -20%;
+}
+a{
+    margin-left: -20%;
 }
 
 mat-error{
@@ -17,20 +26,20 @@ mat-error{
 }
 .mat-card
 {
+    margin-top: 5%;
     background-color: white;
     width: 40% ;
-    margin-left: 30%;
-    
+    margin-left: 10%;
 }
 
 .card-body{
-    padding-left: 12%;
+    padding-left: 15%;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 .card-header
 {
-    background-color: rgb(34, 34, 34);
+    background-color: rgb(80, 76, 76);
     color: rgb(236, 234, 230);
 }
 
@@ -44,7 +53,7 @@ form{
 .submit{
     color: white;
     background-color: #55ce63 ;
-    
+    margin-left: -18%;
 }
 
 .clear{

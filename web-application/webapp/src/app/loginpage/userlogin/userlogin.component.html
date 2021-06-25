@@ -17,14 +17,14 @@
             <br>
             <div>
             <label>Username</label>
-            <input type="text"  class="form-control" #u1 placeholder="username">
+            <input type="text"  class="form-control" name="username" #u1 placeholder="username" [(ngModel)]="login.username">
           
            <label>Password</label>
-            <input type="password"  class="form-control" #p2 placeholder="password">
+            <input type="password" name="password" class="form-control" #p2 placeholder="password" [(ngModel)]="login.password">
             </div>
             <br>
             <div>
-             <button class="btn btn-lg" type="submit"><a href="/dashboard">Login</a></button>
+             <button class="btn btn-lg" type="submit" (click)="userlogin()">Login</button>
             </div>
             
             <br>

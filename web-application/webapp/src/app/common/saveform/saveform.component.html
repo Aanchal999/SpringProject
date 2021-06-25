@@ -56,8 +56,8 @@
                 <!-- <mat-form-field class="fullwidth">
                         <input  matInput name="3" type="text"  placeholder="AlbumId" [(ngModel)]="track.album" ngModel #f3="ngModel"  >
                     </mat-form-field>-->
-                <ng-multiselect-dropdown [placeholder]="'Select Singer'" [data]="dropdownList"
-                    [(ngModel)]="selectedItems" ngDefaultControl [settings]="dropdownSettings">
+                <ng-multiselect-dropdown [placeholder]="'Select Singer'" [data]="singerSelectorList"
+                    [(ngModel)]="selectedItems" ngDefaultControl [settings]="dropdownSettings" name="dropdown">
                 </ng-multiselect-dropdown>
 
             </td>

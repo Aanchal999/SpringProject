@@ -13,7 +13,7 @@ export class AddsingerComponent implements OnInit {
 
 
   constructor(public service: SingerService, private dialog: MatDialog) {
-
+    this.singer = {};
   }
 
   @Input() singer;

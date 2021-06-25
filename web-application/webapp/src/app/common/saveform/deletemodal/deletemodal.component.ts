@@ -16,10 +16,11 @@ export class DeletemodalComponent implements OnInit {
   @Input() id: number;
 
   deleteSinger(){
-    this.service.deleteSinger(this.id)
-    .subscribe((item) => {
-      console.log("response: ", item);
-    });
+    console.log(this.id);
+    // this.service.deleteSinger(this.id)
+    // .subscribe((item) => {
+    //   console.log("response: ", item);
+    // });
   }
 
 }

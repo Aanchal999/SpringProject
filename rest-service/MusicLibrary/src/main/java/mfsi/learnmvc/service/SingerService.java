@@ -105,10 +105,9 @@ public class SingerService {
 		return dtos;
 	}
 
-	public List<IdName> getSinger() {
-		List<Singer> singers = repository.findAll();
-		
-		return null ;
+
+	public List<IdName> selector() {
+		return repository.selector();
 	}
 
 }
