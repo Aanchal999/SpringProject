@@ -7,7 +7,7 @@ export class AlbumModel {
 
     constructor( 
         tracks:Array<IdName> ){        
-        this.tracks=tracks;
+        
 
     }
 }

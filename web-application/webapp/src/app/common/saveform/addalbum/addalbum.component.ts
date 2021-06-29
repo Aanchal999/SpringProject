@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AlbumService } from 'src/app/Service/album.service';
 import { SingerService } from 'src/app/Service/singer-service.service';
 
 @Component({
@@ -11,32 +12,33 @@ export class AddalbumComponent implements OnInit {
 
 
   
-  constructor(public service: SingerService, private dialog: MatDialog) {
+  constructor(public service: AlbumService, private dialog: MatDialog) {
+    this.album={};
 
   }
 
-  @Input() singer;
+  @Input() album;
 
   ngOnInit(){
-    console.log(this.singer);
+    console.log(this.album);
 
   }
 
-  // saveSinger() {
-  //   //enable loader
-  //   this.service.saveSinger(this.singer)
-  //     .subscribe((item) => {
-  //       this.dialog.closeAll();
-  //       //close add singer modal
-  //       //disable loader
-  //       if (item) {
-  //         hideloader();
-  //       }
-  //       console.log("response: ", item);
-  //     });
+  saveAlbum() {
+    //enable loader
+    this.service.saveAlbum(this.album)
+      .subscribe((item) => {
+        this.dialog.closeAll();
+        //close add singer modal
+        //disable loader
+        if (item) {
+          hideloader();
+        }
+        console.log("response: ", item);
+      });
 
-  //   function hideloader() {
-  //     document.getElementById('loading').style.display;
-  //   }
-  // }
+    function hideloader() {
+      document.getElementById('loading').style.display;
+    }
+  }
 }

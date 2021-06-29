@@ -40,7 +40,7 @@ export class SaveformComponent implements OnInit {
       textField: 'name',
       selectAllText: 'Select All',
       unSelectAllText: 'UnSelect All',
-      itemsShowLimit: 5,
+      limitSelection: -1,
       allowSearchFilter: true
     };
 

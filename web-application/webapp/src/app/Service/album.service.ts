@@ -1,31 +1,30 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environment } from 'src/environments/environment';
-import { Track } from '../model/track-model';
+import { AlbumModel } from '../model/album-model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class TrackService {
-
+export class AlbumService {
   constructor(public http: HttpClient) { }
 
-  saveTrack(track: Track) {
-    const url = '/track/save';
-    return this.http.post(url, track);
+  saveAlbum(album: AlbumModel) {
+    const url = '/album/save';
+    return this.http.post(url, album);
   }
 
-  getTrack() {
-    const url = '/track/all';
+  getAlbum() {
+    const url = '/album/all';
     return this.http.get(url);
   }
 
-  
-  getselectorTrack(id){
-    const url = '/album/detail/'+id;
+
+  selector() {
+    const url = '/album/selector';
     return this.http.get(url);
   }
-  searchTrack(keyword: string) {
+
+  searchAlbum(keyword: string) {
     if (keyword == undefined) {
       keyword = "";
     }
@@ -35,7 +34,13 @@ export class TrackService {
       }
     });
     console.log(keyword);
-    const url = '/track/search';
+    const url = '/album/search';
     return this.http.get(url, { params: params });
+  }
+
+  deleteAlbum(id: number) {
+
+    const url = '/album/delete/' + id;
+    return this.http.delete(url);
   }
 }

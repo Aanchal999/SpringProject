@@ -33,6 +33,7 @@ export class UserregisterComponent implements OnInit {
     this.service.register(this.signup).subscribe((item: any) => {
       console.log(item);
       this.isServiceError = false;
+      alert("user Registered successfully");
       this.route.navigate(['/login']);
     }, (error: any) => {
       this.isServiceError = true;

@@ -70,8 +70,8 @@ export class DashboardComponent implements OnInit {
 
 
 
-  applyFilter() {
-    this.TrackList.tracks.filter = this.searchKey.toLowerCase().trim();
+  applyFilter(filterValue: Event) {
+    this.TrackList.tracks.filter =  ((<HTMLInputElement>filterValue.target).value).toLowerCase().trim();
   }
 
   onSelect(selectedItem) {
@@ -84,7 +84,7 @@ export class DashboardComponent implements OnInit {
     console.log(editData);
   }
   searchTrack() {
-    this.service.searchSinger(this.keyword).subscribe((item) => {
+    this.service.searchTrack(this.keyword).subscribe((item) => {
       this.TrackList = item;
       console.log(item);
     });

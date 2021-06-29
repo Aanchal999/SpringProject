@@ -7,28 +7,29 @@
 
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<!--<div class="container-fluid jumbotron" >
+<div class="container-fluid jumbotron" >
+       
+        <div class="row" id="up">
+            <div class="col-lg-3 col-md-3">
+              <mat-form-field color="accent">
+                <input matInput [(ngModel)]= "keyword" >   
+              </mat-form-field>
+              <button mat-icon-button matTooltip="Click to search" class="iconbutton"
+                color="accent" (click) = "searchAlbum()">
+                <mat-icon>search</mat-icon>
+              </button>
+            </div>
+            <div class="col-lg-8 col-md-8" >
+            </div>
+            <div class="col-lg-1 col-md-1" >
+              <button id="button" class="btn btn-lg"  type="submit" (click)="add()" >Add Album</button>
+            </div>
+          </div>
+      
 
-    <div class="row" id="up">
-        <div class="col-lg-3 col-md-3">
-          <mat-form-field color="accent">
-            <input matInput [(ngModel)]= "keyword" (keyup)="applyFilter($event)">   
-          </mat-form-field>
-          <button mat-icon-button matTooltip="Click to search" class="iconbutton"
-            color="accent" (click) = "searchSinger()">
-            <mat-icon>search</mat-icon>
-          </button>
-        </div>
-        <div class="col-lg-8 col-md-8" >
-        </div>
-        <div class="col-lg-1 col-md-1" >
-          <button id="button" class="btn btn-lg"  type="submit">Add Album</button>
-        </div>
-      </div>
 
-
-        <div class="col-lg-3 col-md-3 " *ngFor="let singer of AlbumList">
-            <mat-card id="top" class="text-center" > 
+        <div class="col-lg-3 col-md-3 " *ngFor="let album of albumList">
+            <mat-card id="top" class="text-center" (click)="openSelector(album)" > 
 
 
                 <div id="image"  ><img mat-card-image src="assets\singer.png"
@@ -37,22 +38,22 @@
                     <div class="row">
                         <div class="col-lg-1"></div>
                      <div class="col-lg-6">
-                    <tr >
-                        <td [(ngModel)]= "id">{{album.name}}</td>
+                        <tr >
+                            <td [(ngModel)]= "id" ngDefaultControl>{{album.id}}</td>
+                        </tr>
+                        <tr >
+                        <td [(ngModel)]= "name" ngDefaultControl>{{album.name}}</td>
                     </tr>
-                    <tr >
-                        <td>{{album.dateOfRelease}}</td>
-                    </tr>
-                    
+                   
                     </div>
                     <div class="col-lg-4">
                     
                         <td> <button mat-icon-button matTooltip="Click to Edit" class="iconbutton"
-                            color="primary" (click)="onCreate(singer)"  >
+                            color="primary"   >
                             <mat-icon>edit</mat-icon>
                           </button></td>
                           <td> <button mat-icon-button matTooltip="Click to Delete" class="iconbutton"
-                            color="warn" (click)="openModal()">
+                            color="warn" >
                             <mat-icon>delete</mat-icon>
                           </button></td>
                           </div>
@@ -64,5 +65,5 @@
         </div>
        
 
-</div>-->
+</div>
 <app-footer></app-footer>

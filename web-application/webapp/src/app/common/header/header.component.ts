@@ -1,5 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import {MatSidenav} from '@angular/material/sidenav';
+import { Router } from '@angular/router';
 import { LoginserviceService } from 'src/app/loginservice.service';
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   @ViewChild('sidenav') sidenav: MatSidenav;
 
-  constructor( public service : LoginserviceService) { }
+  constructor( public service : LoginserviceService, public route: Router) { }
 
 
   close() {
@@ -21,7 +22,15 @@ export class HeaderComponent implements OnInit {
   ngOnInit():void{
  
   }
-
+  logout(){
+    console.log("logout");
+    localStorage.removeItem('email');
+    localStorage.removeItem('id');
+    localStorage.removeItem('roles');
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
+    this.route.navigate(['/login'])
+  }
 
 
 }

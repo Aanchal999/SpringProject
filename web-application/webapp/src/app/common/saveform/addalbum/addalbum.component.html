@@ -11,7 +11,7 @@
     integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
     crossorigin="anonymous"></script>
 
-<!--<div class="container-fluid wrap">
+<div class="container-fluid wrap">
     <div class="">
         <form class="text-center">
             <button mat-icon-button class="close-button" [mat-dialog-close]="true" id="close">
@@ -29,7 +29,7 @@
                 <td>
 
                     <mat-form-field class="fullwidth">
-                        <input matInput name="f1" type="text" placeholder="Singer Id" disabled [(ngModel)]="album.id"
+                        <input matInput name="f1" type="text" placeholder="Album Id" disabled [(ngModel)]="album.id"
                             ngModel required #f1="ngModel">
                     </mat-form-field>
                 </td>
@@ -48,25 +48,13 @@
             </tr>
             <tr>
 
-                <td>
-                    <mat-form-field class="fullwidth">
-                        <input matInput name="3" type="text" placeholder="Date Of Release" [(ngModel)]="album.dateOfRelease" ngModel
-                            required #f3="ngModel">
-                    </mat-form-field>
-                    <div *ngIf="f3.invalid && (f3.dirty || f3.touched)">
-                        <mat-error *ngIf="f3.hasError('required')">
-                            Date Of Release is required.
-                        </mat-error>
-                    </div>
-                </td>
-
             
             </tr>
             <div class="row">
-                <button type="submit" class="btn btn-lg submit" (click)="saveSinger()" md-raised-button
+                <button type="submit" class="btn btn-lg submit" (click)="saveAlbum()" md-raised-button
                     id="close">Save</button>
                 <button type="reset" class="btn btn-lg clear" md-raised-button>Clear</button>
             </div>
         </form>
     </div>
-</div>-->
+</div>

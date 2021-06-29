@@ -15,8 +15,8 @@
       <button mat-icon-button class="example-icon" (click)="sidenav.open()" >
         <mat-icon>menu</mat-icon>
       </button>
-      <a>My App</a>
-    </li>
+      <a>Music</a>
+    <!-- </li>
 
           <li class="nav-item active">
             <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
@@ -26,7 +26,7 @@
           </li>
           <li class="nav-item">
             <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
-          </li>
+          </li> -->
     
           <!-- Dropdown -->
 
@@ -44,8 +44,8 @@
           
           <div class="dropdown-content">
             <a href="#"><i class="fa fa-key"></i>Change password</a>
-            <a href="#"><i class="fa fa-user"></i>My Profile</a>
-            <a href="#"><i class="fa fa-sign-out"></i>Log Out</a>
+            <a  href="#"><i class="fa fa-user"></i>My Profile</a>
+            <a href="#" (click)="logout()"><i class="fa fa-sign-out"></i>Log Out</a>
           </div>
         </div>
       </form>

@@ -11,8 +11,9 @@ import { SingerService } from 'src/app/Service/singer-service.service';
 export class AddsingerComponent implements OnInit {
 
 
-
+  singerList: any;
   constructor(public service: SingerService, private dialog: MatDialog) {
+    this.singerList = [];
     this.singer = {};
   }
 
@@ -22,11 +23,17 @@ export class AddsingerComponent implements OnInit {
     console.log(this.singer);
 
   }
+  getSinger() {
+    this.service.getSinger().subscribe((response) => {
+      this.singerList = response;
+    });
+  }
 
   saveSinger() {
     //enable loader
     this.service.saveSinger(this.singer)
       .subscribe((item) => {
+    
         this.dialog.closeAll();
         //close add singer modal
         //disable loader
@@ -34,6 +41,7 @@ export class AddsingerComponent implements OnInit {
           hideloader();
         }
         console.log("response: ", item);
+        this.getSinger();
       });
 
     function hideloader() {

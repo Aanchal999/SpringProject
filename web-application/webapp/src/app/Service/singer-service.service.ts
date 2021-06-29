@@ -41,6 +41,7 @@ export class SingerService {
   }
 
   deleteSinger(id: number) {
+
     const url = '/singer/delete/' + id;
     return this.http.delete(url);
   }

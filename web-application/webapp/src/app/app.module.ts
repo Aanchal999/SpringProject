@@ -59,6 +59,8 @@ import { PlaylistsComponent } from './sidebar/playlists/playlists.component';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AddalbumComponent } from './common/saveform/addalbum/addalbum.component';
 import { InterceptorService } from './Service/interceptor.service';
+import { AlbumselectorComponent } from './sidebar/albums/albumselector/albumselector.component';
+
 
 @NgModule({
   declarations: [
@@ -77,7 +79,8 @@ import { InterceptorService } from './Service/interceptor.service';
     UsersComponent,
     AdminsComponent,
     PlaylistsComponent,
-    AddalbumComponent
+    AddalbumComponent,
+    AlbumselectorComponent
 
 
   ],

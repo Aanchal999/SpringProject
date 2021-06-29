@@ -1,74 +1,74 @@
 .mat-card{
-    border-radius: 3%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    background-color: whitesmoke;
-    padding-top: 30px;
-    height: 250px;
+  border-radius: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: whitesmoke;
+  padding-top: 30px;
+  height: 250px;
+}
+.mat-card:hover {
+  box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
+}
+img{
+  border-radius: 100%;
+}
+
+.jumbotron{
+   background-color:rgba(42, 42, 42, 1)!important;
+  
+   margin-bottom: 0;
+   
+}
+mat-form-field{
+  margin-left: 5%;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
  }
- .mat-card:hover {
-    box-shadow: 0 10px 18px 0 rgba(0,0,0,0.2);
-  }
-  img{
-    border-radius: 100%;
-  }
+ ::ng-deep .mat-form-field-placeholder{
 
-  .jumbotron{
-     background-color:rgba(42, 42, 42, 1)!important;
-    
-     margin-bottom: 0;
-     
-  }
-  mat-form-field{
-    margin-left: 5%;
-  }
+  color:white;
+}
 
-  ::ng-deep .mat-focused .mat-form-field-label {
-    /*change color of label*/
-    color: white !important;
-   }
-   ::ng-deep .mat-form-field-placeholder{
-
-    color:white;
-  }
-
-  ::ng-deep.mat-form-field-underline {
-    /*change color of underline*/
-    background-color: white !important;
-  }
+::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: white !important;
+}
 
 
-  input.mat-input-element {
-    color: white;
-  }
-  #button{
-    color: white;
-    background-color: #7123e2 ;
-    float: right;
-    margin-right: 10%;
+input.mat-input-element {
+  color: white;
+}
+#button{
+  color: white;
+  background-color: #7123e2 ;
+  float: right;
+  margin-right: 10%;
 }
 mat-icon{
-  font-size: 35px;
+font-size: 35px;
 }
 
-  #up{
-    margin-top: 5%;
-  } 
+#up{
+  margin-top: 5%;
+} 
 
-  #top{
-    margin-top: 15%;
-  }
-  img{
-      height: 150px;
-      width: 150px;
-      align-self: center;
-  }
+#top{
+  margin-top: 15%;
+}
+img{
+    height: 150px;
+    width: 150px;
+    align-self: center;
+}
 
-  input{
-    color: white;
-  }
+input{
+  color: white;
+}
 
-  #fav{
-    padding-top: 0;
-    padding-right: 6px;
-    float: right;
-  }
+#fav{
+  padding-top: 0;
+  padding-right: 6px;
+  float: right;
+}
