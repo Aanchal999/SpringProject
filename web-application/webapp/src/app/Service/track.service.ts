@@ -38,4 +38,9 @@ export class TrackService {
     const url = '/track/search';
     return this.http.get(url, { params: params });
   }
+
+  deleteTrack(id: number) {
+    const url = '/track/delete/' + id;
+    return this.http.delete(url);
+  }
 }

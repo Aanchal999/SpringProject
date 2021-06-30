@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AddalbumComponent } from 'src/app/common/saveform/addalbum/addalbum.component';
+import { DeleteAlbumComponent } from 'src/app/common/saveform/delete-album/delete-album.component';
 import { DeletemodalComponent } from 'src/app/common/saveform/deletemodal/deletemodal.component';
 import { AlbumService } from 'src/app/Service/album.service';
 import { SingerService } from 'src/app/Service/singer-service.service';
@@ -57,13 +58,11 @@ export class AlbumsComponent implements OnInit {
     let dialogRef = this.dialog.open(AddalbumComponent, config);
   }
 
-  openModal() {
-    // const dialogconfig = new MatDialogConfig();
-    // dialogconfig.disableClose = false;
-    // dialogconfig.autoFocus = true;
-    // const modalRef= this.dialog.open(DeletemodalComponent, dialogconfig);
-    // (<DeletemodalComponent>modalRef.componentInstance).id = this.id;
-  }
+  openModal(selectedItem) {
+    let config = new MatDialogConfig();
+    let dialogRef = this.dialog.open(DeleteAlbumComponent, config);
+    dialogRef.componentInstance.album = selectedItem;
+ }
 
   getAlbum() {
     this.service.getAlbum().subscribe((response) => {

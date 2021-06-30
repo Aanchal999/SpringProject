@@ -9,6 +9,7 @@ import { TrackService } from 'src/app/Service/track.service';
 import { SingersComponent } from 'src/app/sidebar/singers/singers.component';
 import { SingerService } from 'src/app/Service/singer-service.service';
 import { IdName } from 'src/app/model/id-name';
+import { DeleteTrackComponent } from '../saveform/delete-track/delete-track.component';
 
 
 @Component({
@@ -61,11 +62,10 @@ export class DashboardComponent implements OnInit {
     let dialogRef = this.dialog.open(SaveformComponent, config);
   }
 
-  openModal() {
-    const dialogconfig = new MatDialogConfig();
-    dialogconfig.disableClose = false;
-    dialogconfig.autoFocus = true;
-    this.dialog.open(DeletemodalComponent, dialogconfig);
+  openModal(selectedItem) {
+    let config = new MatDialogConfig();
+    let dialogRef = this.dialog.open(DeleteTrackComponent, config);
+    dialogRef.componentInstance.track = selectedItem;
   }
 
 

@@ -60,6 +60,9 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { AddalbumComponent } from './common/saveform/addalbum/addalbum.component';
 import { InterceptorService } from './Service/interceptor.service';
 import { AlbumselectorComponent } from './sidebar/albums/albumselector/albumselector.component';
+import { DeleteTrackComponent } from './common/saveform/delete-track/delete-track.component';
+import { DeleteAlbumComponent } from './common/saveform/delete-album/delete-album.component';
+
 
 
 @NgModule({
@@ -80,7 +83,10 @@ import { AlbumselectorComponent } from './sidebar/albums/albumselector/albumsele
     AdminsComponent,
     PlaylistsComponent,
     AddalbumComponent,
-    AlbumselectorComponent
+    AlbumselectorComponent,
+    DeleteTrackComponent,
+    DeleteAlbumComponent,
+  
 
 
   ],

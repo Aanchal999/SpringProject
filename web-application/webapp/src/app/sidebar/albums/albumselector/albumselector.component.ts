@@ -33,7 +33,7 @@ export class AlbumselectorComponent implements OnInit {
    
     this.service.getselectorTrack(params.params.albumId).subscribe((response:any) => {
       this.TrackList = response;
-      console.log(response.tracks);
+      console.log(response);
     });
   });
   }

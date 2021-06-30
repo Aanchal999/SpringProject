@@ -28,17 +28,24 @@
             <tr>
                 <td>
 
-                    <mat-form-field class="fullwidth">
+                    <!-- <mat-form-field class="fullwidth">
                         <input matInput name="f1" type="text" placeholder="Singer Id" disabled [(ngModel)]="singer.id"
                         ngDefaultControl  ngModel required #f1="ngModel">
-                    </mat-form-field>
+                    </mat-form-field> -->
+                    <label>Singer Id</label>
+                    <input name="f1" type="text" placeholder="Singer Id" disabled [(ngModel)]="singer.id"
+                        ngDefaultControl ngModel required #f1="ngModel">
+
                 </td>
 
                 <td>
-                    <mat-form-field class="fullwidth">
+                    <!-- <mat-form-field class="fullwidth">
                         <input matInput name="f2" type="text" placeholder="Name" [(ngModel)]="singer.name" ngModel
                             required #f2="ngModel" ngDefaultControl>
-                    </mat-form-field>
+                    </mat-form-field> -->
+                    <label>Singer Name</label>
+                    <input name="f2" type="text" placeholder="Name" [(ngModel)]="singer.name" ngModel
+                    required #f2="ngModel" ngDefaultControl>
                     <div *ngIf="f2.invalid && (f2.dirty || f2.touched)">
                         <mat-error *ngIf="f2.hasError('required')">
                             Name is required.
@@ -49,10 +56,13 @@
             <tr>
 
                 <td>
-                    <mat-form-field class="fullwidth">
+                    <!-- <mat-form-field class="fullwidth">
                         <input matInput name="3" type="text" placeholder="Gender" [(ngModel)]="singer.gender" ngModel
                             required #f3="ngModel" ngDefaultControl>
-                    </mat-form-field>
+                    </mat-form-field> -->
+                    <label>Gender</label>
+                    <input name="3" type="text" placeholder="Gender" [(ngModel)]="singer.gender" ngModel
+                    required #f3="ngModel" ngDefaultControl>
                     <div *ngIf="f3.invalid && (f3.dirty || f3.touched)">
                         <mat-error *ngIf="f3.hasError('required')">
                             Gender is required.
@@ -61,10 +71,13 @@
                 </td>
 
                 <td>
-                    <mat-form-field class="fullwidth">
+                    <!-- <mat-form-field class="fullwidth">
                         <input matInput name="3" type="text" placeholder="Nationality" [(ngModel)]="singer.nationality"
                             ngModel required #f3="ngModel" ngDefaultControl>
-                    </mat-form-field>
+                    </mat-form-field> -->
+                    <label>Natioality</label>
+                    <input name="3" type="text" placeholder="Nationality" [(ngModel)]="singer.nationality"
+                    ngModel required #f3="ngModel" ngDefaultControl>
                     <div *ngIf="f3.invalid && (f3.dirty || f3.touched)">
                         <mat-error *ngIf="f3.hasError('required')">
                             Nationality is required.

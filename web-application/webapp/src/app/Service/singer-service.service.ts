@@ -25,7 +25,7 @@ export class SingerService {
     const url = '/singer/selector';
     return this.http.get(url);
   }
-
+  
   searchSinger(keyword: string) {
     if (keyword == undefined) {
       keyword = "";
@@ -41,7 +41,6 @@ export class SingerService {
   }
 
   deleteSinger(id: number) {
-
     const url = '/singer/delete/' + id;
     return this.http.delete(url);
   }
