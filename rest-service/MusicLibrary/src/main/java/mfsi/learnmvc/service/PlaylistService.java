@@ -28,10 +28,10 @@ public class PlaylistService {
 	private UserRepository userRepository;
 	
 	@Autowired
-	private TrackRepository repository;
+	private TrackRepository trackRepository;
 	
 	@Autowired
-	private PlaylistRepository playlistRepository;
+	private PlaylistRepository repository;
 	
 	private Playlist mapper(PlaylistDto dto) {
 		Playlist playlist = new Playlist();
@@ -65,7 +65,7 @@ public class PlaylistService {
 	}
 	
 	public List<PlaylistDto> getAll() {
-		List<Playlist> playlists = playlistRepository.findAll();
+		List<Playlist> playlists = repository.findAll();
 		List<PlaylistDto> dtos = new ArrayList<>();
 		for (Playlist playlist : playlists) {
 			dtos.add(mapper(playlist));
@@ -75,11 +75,16 @@ public class PlaylistService {
 
 	public PlaylistDto save(PlaylistDto dto) {
 		Playlist playlist = mapper(dto);
-		playlist = playlistRepository.save(playlist);
+		playlist = repository.save(playlist);
 		return mapper(playlist);
 	}
 	
 	public void delete(Long id) {
-		playlistRepository.deleteById(id);
+		repository.deleteById(id);
+	}
+
+	public List<IdName> selector() {
+		return repository.selector();
+	
 	}
 }

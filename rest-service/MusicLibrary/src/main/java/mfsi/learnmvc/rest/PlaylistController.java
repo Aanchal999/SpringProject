@@ -15,7 +15,7 @@ import mfsi.learnmvc.service.PlaylistService;
 @RestController
 
 @RequestMapping("/playlist")
-public class PlailistController {
+public class PlaylistController {
 	
 	@Autowired
 	private PlaylistService service;
@@ -37,5 +37,9 @@ public class PlailistController {
 		service.delete(id);
 	}
 
-	
+	@RequestMapping(value = "/selector", method = RequestMethod.GET)
+	public ResponseEntity<?> selector() {
+		ResponseEntity<?> response = new ResponseEntity<>(service.selector(), HttpStatus.OK);
+		return response;
+	}
 }

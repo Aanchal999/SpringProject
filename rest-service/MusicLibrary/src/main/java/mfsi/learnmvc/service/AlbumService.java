@@ -9,9 +9,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mfsi.learnmvc.domain.Album;
+import mfsi.learnmvc.domain.Singer;
 import mfsi.learnmvc.domain.Track;
 import mfsi.learnmvc.dto.AlbumDto;
 import mfsi.learnmvc.dto.IdName;
+import mfsi.learnmvc.dto.SingerDto;
 import mfsi.learnmvc.repository.AlbumRepository;
 import mfsi.learnmvc.repository.TrackRepository;
 
@@ -81,6 +83,19 @@ public class AlbumService {
 
 	public List<IdName> selector() {
 		return repository.selector();
+	}
+
+	public List<AlbumDto> search(String keyword) {
+		if (keyword == null || keyword.isEmpty()) {
+			return getAll();
+		}
+
+		List<Album> albums = repository.search(keyword);
+		List<AlbumDto> dtos = new ArrayList<>();
+		for (Album album : albums) {
+			dtos.add(mapper(album,false));
+		}
+		return dtos;
 	}
 
 }
