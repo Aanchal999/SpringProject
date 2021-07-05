@@ -13,8 +13,10 @@ import org.springframework.stereotype.Service;
 
 import mfsi.learnmvc.auth.ERole;
 import mfsi.learnmvc.domain.Role;
+import mfsi.learnmvc.domain.Singer;
 import mfsi.learnmvc.domain.User;
 import mfsi.learnmvc.dto.IdName;
+import mfsi.learnmvc.dto.SingerDto;
 import mfsi.learnmvc.dto.UserDto;
 import mfsi.learnmvc.repository.RoleRepository;
 import mfsi.learnmvc.repository.UserRepository;
@@ -140,6 +142,22 @@ public class UserService {
 		dto.setRoles(roles);
 
 		return dto;
+	}
+
+	public UserDto save(UserDto dto) {
+		User user = mapper(dto);
+		if (dto.getId() == null) { // Means this value is not in table
+			user = repository.save(user);
+		} else { // Means this value might be in table
+			Optional<User> userOptional = repository.findById(user.getId());
+			if (userOptional.isPresent()) { // Make sure value exist in table
+				User userDB = userOptional.get();
+				userDB.setName(user.getName());
+				userDB.setRoles(user.getRoles());
+				user = repository.save(userDB);
+			}
+		}
+		return mapper(user);
 	}
 
 }

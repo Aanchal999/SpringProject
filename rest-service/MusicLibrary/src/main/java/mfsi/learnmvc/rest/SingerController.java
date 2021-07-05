@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import mfsi.learnmvc.dto.PageInfoDto;
 import mfsi.learnmvc.dto.SingerDto;
 import mfsi.learnmvc.service.SingerService;
 
