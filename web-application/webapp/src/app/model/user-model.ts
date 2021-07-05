@@ -8,9 +8,6 @@ export class UserModel {
     phoneNo: string;
     roles:Array<IdName>;
     
-    constructor(  
-        roles:Array<IdName>){
-        this.roles=roles;
-       
+    constructor( ){ 
     }
 }

@@ -43,26 +43,9 @@ export class SingersComponent implements OnInit {
 
 
   onCreate(selectedItem) {
-
-    // const editData: Array<any> = [
-    //   { id: selectedItem.id },
-    //   { name: selectedItem.name },
-    //   { date: selectedItem.dateOfRelease },
-    //   { albumid: selectedItem.albumId }
-    // ];
-    // console.log(editData);
-
-    // const dialogconfig = new MatDialogConfig();
-    //dialogconfig.disableClose = false;
-    //dialogconfig.autoFocus = true;
-    //this.dialog.open(AddsingerComponent, dialogconfig);
-
-
     let config = new MatDialogConfig();
     let dialogRef = this.dialog.open(AddsingerComponent, config);
     dialogRef.componentInstance.singer = selectedItem;
-
-
   }
 
   add() {
@@ -71,11 +54,6 @@ export class SingersComponent implements OnInit {
   }
 
   openModal(selectedItem) {
-    // const dialogconfig = new MatDialogConfig();
-    // dialogconfig.disableClose = false;
-    // dialogconfig.autoFocus = true;
-    // const modalRef = this.dialog.open(DeletemodalComponent, dialogconfig);
-    // modalRef.componentInstance.singer = selectedItem;
     let config = new MatDialogConfig();
     let dialogRef = this.dialog.open(DeletemodalComponent, config);
     dialogRef.componentInstance.singer = selectedItem;

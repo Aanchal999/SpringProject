@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
 import { DashboardComponent } from './common/dashboard/dashboard.component';
 import { UserloginComponent } from './loginpage/userlogin/userlogin.component';
 import { UserregisterComponent } from './loginpage/userregister/userregister.component';
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent },
   { path: 'admins', component: AdminsComponent },
   { path: 'playlists', component: PlaylistsComponent },
+  { path: 'adminpanel', component: AdminPanelComponent },
   { path: 'albumselector/:albumId/:albumName', component: AlbumselectorComponent },
   { path: '**', component: UserloginComponent },
 ];

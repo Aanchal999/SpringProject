@@ -62,6 +62,8 @@ import { InterceptorService } from './Service/interceptor.service';
 import { AlbumselectorComponent } from './sidebar/albums/albumselector/albumselector.component';
 import { DeleteTrackComponent } from './common/saveform/delete-track/delete-track.component';
 import { DeleteAlbumComponent } from './common/saveform/delete-album/delete-album.component';
+import { AdminPanelComponent } from './admin-panel/admin-panel.component';
+import { AddUserComponent } from './common/saveform/add-user/add-user.component';
 
 
 
@@ -86,6 +88,8 @@ import { DeleteAlbumComponent } from './common/saveform/delete-album/delete-albu
     AlbumselectorComponent,
     DeleteTrackComponent,
     DeleteAlbumComponent,
+    AdminPanelComponent,
+    AddUserComponent,
   
 
 
